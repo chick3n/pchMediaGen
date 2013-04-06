@@ -1,0 +1,80 @@
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Listening for SIGTERM.
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Bus STARTING
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Started monitor thread 'Autoreloader'.
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Serving on 0.0.0.0:8080
+02/22/2013 01:13:38 PM [22/Feb/2013:13:13:38] ENGINE Bus STARTED
+02/22/2013 01:13:40 PM [22/Feb/2013:13:13:40] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/movies/movie?id=481&page=0&play=true&f=
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  COOKIE: session_id=84b94c99facbd614bc82d99eec724eed91e99ca3
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/22/2013 01:13:40 PM [22/Feb/2013:13:13:40] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 77, in movie
+    , cherrypy.request.path)
+  File "E:\Python27\lib\site-packages\cherrypy\__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'path'
+
+02/22/2013 01:13:40 PM 192.168.0.24 - - [22/Feb/2013:13:13:40] "GET /movies/movie?id=481&page=0&play=true&f= HTTP/1.1" 500 1501 "http://192.168.0.60:8080/movies/movie?id=481&page=0&play=true&f=" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Restarting because E:/Code/Python/Worker/Views\Movie.py changed.
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Stopped thread 'Autoreloader'.
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Bus STOPPING
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Stopped thread '_TimeoutMonitor'.
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Bus STOPPED
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Bus EXITING
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Bus EXITED
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Waiting for child threads to terminate...
+02/22/2013 01:14:15 PM [22/Feb/2013:13:14:15] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Listening for SIGTERM.
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Bus STARTING
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Started monitor thread 'Autoreloader'.
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Serving on 0.0.0.0:8080
+02/22/2013 01:14:19 PM [22/Feb/2013:13:14:19] ENGINE Bus STARTED
+02/22/2013 01:14:24 PM >{movie}: no referer given, popcorn reloaded page based on cached clear?
+02/22/2013 01:14:24 PM 192.168.0.24 - - [22/Feb/2013:13:14:24] "GET /movies/movie?id=481&page=0&play=true&f= HTTP/1.1" 200 40585 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/22/2013 01:15:04 PM >{movie}: no referer given, popcorn reloaded page based on cached clear?
+02/22/2013 01:15:05 PM 192.168.0.24 - - [22/Feb/2013:13:15:05] "GET /movies/movie?id=481&page=0&play=true&f= HTTP/1.1" 200 40585 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/22/2013 01:15:11 PM [22/Feb/2013:13:15:11] ENGINE Restarting because E:/Code/Python/Worker/Views\Movie.py changed.
+02/22/2013 01:15:11 PM [22/Feb/2013:13:15:11] ENGINE Stopped thread 'Autoreloader'.
+02/22/2013 01:15:11 PM [22/Feb/2013:13:15:11] ENGINE Bus STOPPING
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Stopped thread '_TimeoutMonitor'.
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Bus STOPPED
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Bus EXITING
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Bus EXITED
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Waiting for child threads to terminate...
+02/22/2013 01:15:15 PM [22/Feb/2013:13:15:15] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/22/2013 01:15:17 PM [22/Feb/2013:13:15:17] ENGINE Listening for SIGTERM.
+02/22/2013 01:15:17 PM [22/Feb/2013:13:15:17] ENGINE Bus STARTING
+02/22/2013 01:15:17 PM [22/Feb/2013:13:15:17] ENGINE Started monitor thread 'Autoreloader'.
+02/22/2013 01:15:17 PM [22/Feb/2013:13:15:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/22/2013 01:15:18 PM [22/Feb/2013:13:15:18] ENGINE Serving on 0.0.0.0:8080
+02/22/2013 01:15:18 PM [22/Feb/2013:13:15:18] ENGINE Bus STARTED
+02/22/2013 01:15:19 PM @(Movie.py)>{movie}: called from referrer 
+02/22/2013 01:15:19 PM >{movie}: no referer given, popcorn reloaded page based on cached clear?
+02/22/2013 01:15:20 PM 192.168.0.24 - - [22/Feb/2013:13:15:20] "GET /movies/movie?id=481&page=0&play=true&f= HTTP/1.1" 200 40585 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Restarting because E:/Code/Python/Worker/Views\Movie.py changed.
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Stopped thread 'Autoreloader'.
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Bus STOPPING
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Stopped thread '_TimeoutMonitor'.
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Bus STOPPED
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Bus EXITING
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Bus EXITED
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Waiting for child threads to terminate...
+02/22/2013 01:15:45 PM [22/Feb/2013:13:15:45] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py

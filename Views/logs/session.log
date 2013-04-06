@@ -1,0 +1,1424 @@
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Listening for SIGTERM.
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Bus STARTING
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 09:54:22 AM [23/Feb/2013:09:54:22] ENGINE Bus STARTED
+02/23/2013 09:54:31 AM 192.168.0.24 - - [23/Feb/2013:09:54:31] "GET / HTTP/1.1" 200 15228 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:54:31 AM 192.168.0.24 - - [23/Feb/2013:09:54:31] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:54:41 AM @(Tv.py)>{tv}: called from referrer http://192.168.0.60:8080/
+02/23/2013 09:54:42 AM 192.168.0.24 - - [23/Feb/2013:09:54:42] "GET /tv/episode?id=3701&page=0&play=true HTTP/1.1" 200 28533 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:54:42 AM 192.168.0.24 - - [23/Feb/2013:09:54:42] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?id=3701&page=0&play=true" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:06 AM 192.168.0.24 - - [23/Feb/2013:09:55:06] "GET /tv/added HTTP/1.1" 200 29882 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:07 AM 192.168.0.24 - - [23/Feb/2013:09:55:07] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:52 AM 192.168.0.24 - - [23/Feb/2013:09:55:52] "GET /tv/added HTTP/1.1" 200 29451 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:55:55 AM @(Tv.py)>{tv}: called from referrer http://192.168.0.60:8080/tv/added
+02/23/2013 09:55:55 AM 192.168.0.24 - - [23/Feb/2013:09:55:55] "GET /tv/episode?id=3700&page=0&play=true HTTP/1.1" 200 28060 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:56:02 AM 192.168.0.24 - - [23/Feb/2013:09:56:02] "GET /tv/watchme HTTP/1.1" 200 29213 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 09:56:10 AM @(Tv.py)>{tv}: called from referrer http://192.168.0.60:8080/tv/watchme
+02/23/2013 09:56:10 AM 192.168.0.24 - - [23/Feb/2013:09:56:10] "GET /tv/episode?id=3472&page=0&play=true HTTP/1.1" 200 17282 "http://192.168.0.60:8080/tv/watchme" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:01:38 AM [23/Feb/2013:10:01:38] ENGINE Listening for SIGTERM.
+02/23/2013 10:01:38 AM [23/Feb/2013:10:01:38] ENGINE Bus STARTING
+02/23/2013 10:01:38 AM [23/Feb/2013:10:01:38] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 10:01:38 AM [23/Feb/2013:10:01:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 10:01:39 AM [23/Feb/2013:10:01:39] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 10:01:39 AM [23/Feb/2013:10:01:39] ENGINE Bus STARTED
+02/23/2013 10:01:47 AM @(Tv.py)>{tv}: called from referrer EMPTY
+02/23/2013 10:01:47 AM >{tv}: no referer given, popcorn reloaded page based on cached clear?
+02/23/2013 10:01:47 AM 192.168.0.24 - - [23/Feb/2013:10:01:47] "GET /tv/episode?page=0&play=true HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Restarting because E:/Code/Python/Worker/Views\Tv.py changed.
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Bus STOPPING
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Bus STOPPED
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Bus EXITING
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Bus EXITED
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Waiting for child threads to terminate...
+02/23/2013 10:02:14 AM [23/Feb/2013:10:02:14] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Listening for SIGTERM.
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Bus STARTING
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 10:02:16 AM [23/Feb/2013:10:02:16] ENGINE Bus STARTED
+02/23/2013 10:02:17 AM @(Tv.py)>{tv}: called from referrer EMPTY
+02/23/2013 10:02:17 AM >{tv}: no referer given, popcorn reloaded page based on cached clear?
+02/23/2013 10:02:17 AM @(Tv.py)>{episode}: Call made to episode with no SHOW and SEASON and EPISODE
+02/23/2013 10:02:17 AM 192.168.0.24 - - [23/Feb/2013:10:02:17] "GET /tv/episode?page=0&play=true HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:02:24 AM @(Tv.py)>{tv}: called from referrer EMPTY
+02/23/2013 10:02:24 AM >{tv}: no referer given, popcorn reloaded page based on cached clear?
+02/23/2013 10:02:26 AM @(Tv.py)>{episode}: Call made to episode with no SHOW and SEASON and EPISODE
+02/23/2013 10:02:29 AM 192.168.0.24 - - [23/Feb/2013:10:02:29] "GET /tv/episode?page=0&play=true HTTP/1.1" 200 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Restarting because E:/Code/Python/Worker/Views\Tv.py changed.
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Bus STOPPING
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Bus STOPPED
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Bus EXITING
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Bus EXITED
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Waiting for child threads to terminate...
+02/23/2013 10:04:01 AM [23/Feb/2013:10:04:01] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Listening for SIGTERM.
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Bus STARTING
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 10:04:03 AM [23/Feb/2013:10:04:03] ENGINE Bus STARTED
+02/23/2013 10:04:16 AM @(Tv.py)>{tv}: called from referrer EMPTY
+02/23/2013 10:04:16 AM >{tv}: no referer given, popcorn reloaded page based on cached clear?
+02/23/2013 10:04:16 AM @(Tv.py)>{episode}: Call made to episode with no SHOW and SEASON and EPISODE
+02/23/2013 10:04:16 AM 192.168.0.24 - - [23/Feb/2013:10:04:16] "GET /tv/episode?page=0&play=false HTTP/1.1" 303 110 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /tv/show HTTP/1.1" 200 26035 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/tv_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/codegeass-lelouchoftherebellion_fanart.jpg HTTP/1.1" 200 36044 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/beautyandthebeast_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/community_fanart.jpg HTTP/1.1" 200 42331 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/arresteddevelopment_fanart.jpg HTTP/1.1" 200 44724 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/chuck_fanart.jpg HTTP/1.1" 200 24795 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/firefly_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/futurama_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/fringe_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/fallingskies_fanart.jpg HTTP/1.1" 200 21567 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/24_fanart.jpg HTTP/1.1" 200 33582 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:17 AM 192.168.0.24 - - [23/Feb/2013:10:04:17] "GET /images/tv/alcatraz_fanart.jpg HTTP/1.1" 200 30966 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:30 AM @(Tv.py)>{tv}: called from referrer EMPTY
+02/23/2013 10:04:30 AM >{tv}: no referer given, popcorn reloaded page based on cached clear?
+02/23/2013 10:04:30 AM @(Tv.py)>{episode}: Call made to episode with no SHOW and SEASON and EPISODE
+02/23/2013 10:04:30 AM 192.168.0.24 - - [23/Feb/2013:10:04:30] "GET /tv/episode?page=0&play=true HTTP/1.1" 303 110 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:30 AM 192.168.0.24 - - [23/Feb/2013:10:04:30] "GET /tv/show HTTP/1.1" 200 26035 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Restarting because E:/Code/Python/Worker/Views\Tv.py changed.
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Bus STOPPING
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Bus STOPPED
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Bus EXITING
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Bus EXITED
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Waiting for child threads to terminate...
+02/23/2013 10:04:43 AM [23/Feb/2013:10:04:43] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 11:16:15 AM [23/Feb/2013:11:16:15] ENGINE Listening for SIGTERM.
+02/23/2013 11:16:15 AM [23/Feb/2013:11:16:15] ENGINE Bus STARTING
+02/23/2013 11:16:15 AM [23/Feb/2013:11:16:15] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 11:16:15 AM [23/Feb/2013:11:16:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 11:16:16 AM [23/Feb/2013:11:16:16] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 11:16:16 AM [23/Feb/2013:11:16:16] ENGINE Bus STARTED
+02/23/2013 11:17:09 AM 192.168.0.24 - - [23/Feb/2013:11:17:09] "GET / HTTP/1.1" 200 15228 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:17:11 AM 192.168.0.24 - - [23/Feb/2013:11:17:11] "GET /tv/show HTTP/1.1" 200 26035 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:17:15 AM 192.168.0.24 - - [23/Feb/2013:11:17:15] "GET /tv/added.html?f=s:C HTTP/1.1" 404 1175 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:17:30 AM 192.168.0.24 - - [23/Feb/2013:11:17:30] "GET /tv/show HTTP/1.1" 200 26035 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:17:34 AM 192.168.0.24 - - [23/Feb/2013:11:17:34] "GET /tv/added.html?f=s:C HTTP/1.1" 404 1175 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:18:29 AM 192.168.0.24 - - [23/Feb/2013:11:18:29] "GET /tv/show HTTP/1.1" 200 26029 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:18:32 AM 192.168.0.24 - - [23/Feb/2013:11:18:32] "GET /tv/show?f=s:C HTTP/1.1" 200 14923 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:18:32 AM 192.168.0.24 - - [23/Feb/2013:11:18:32] "GET /images/tv/curbyourenthusiasm_fanart.jpg HTTP/1.1" 200 26625 "http://192.168.0.60:8080/tv/show?f=s:C" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Restarting because E:/Code/Python/Worker/Views\Content.py changed.
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Bus STOPPING
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Bus STOPPED
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Bus EXITING
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Bus EXITED
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Waiting for child threads to terminate...
+02/23/2013 11:19:53 AM [23/Feb/2013:11:19:53] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Listening for SIGTERM.
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Bus STARTING
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 11:19:55 AM [23/Feb/2013:11:19:55] ENGINE Bus STARTED
+02/23/2013 11:19:58 AM 192.168.0.24 - - [23/Feb/2013:11:19:58] "GET /tv/show HTTP/1.1" 200 26075 "http://192.168.0.60:8080/tv/show?f=s:C" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Listening for SIGTERM.
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Bus STARTING
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 12:50:56 PM [23/Feb/2013:12:50:56] ENGINE Bus STARTED
+02/23/2013 12:51:11 PM 192.168.0.24 - - [23/Feb/2013:12:51:11] "GET /tv/episode?show=3&season=2&page=0&play=false HTTP/1.1" 200 31746 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:51:43 PM 192.168.0.24 - - [23/Feb/2013:12:51:43] "GET /tv/episode?show=3&season=2&page=0&play=false HTTP/1.1" 200 31750 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:53:46 PM [23/Feb/2013:12:53:46] ENGINE Listening for SIGTERM.
+02/23/2013 12:53:46 PM [23/Feb/2013:12:53:46] ENGINE Bus STARTING
+02/23/2013 12:53:46 PM [23/Feb/2013:12:53:46] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 12:53:46 PM [23/Feb/2013:12:53:46] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 12:53:47 PM [23/Feb/2013:12:53:47] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 12:53:47 PM [23/Feb/2013:12:53:47] ENGINE Bus STARTED
+02/23/2013 12:54:00 PM >{tv}: no cookie sent, popcorn reloaded page based on cached clear?
+02/23/2013 12:54:04 PM 192.168.0.24 - - [23/Feb/2013:12:54:04] "GET /tv/episode?show=3&season=2&id=3609&page=0&play=true HTTP/1.1" 200 31750 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:54:22 PM 192.168.0.24 - - [23/Feb/2013:12:54:22] "GET /tv/episode?show=3&season=2&id=3607&page=0&play=true HTTP/1.1" 200 31752 "http://192.168.0.60:8080/tv/episode?show=3&season=2&id=3609&page=0&play=true" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:54:42 PM >{tv}: no cookie sent, popcorn reloaded page based on cached clear?
+02/23/2013 12:54:42 PM 192.168.0.24 - - [23/Feb/2013:12:54:42] "GET /tv/episode?show=3&season=2&id=3607&page=0&play=true HTTP/1.1" 200 31751 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Restarting because E:/Code/Python/Worker/Views\Movie.py changed.
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Bus STOPPING
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Bus STOPPED
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Bus EXITING
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Bus EXITED
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Waiting for child threads to terminate...
+02/23/2013 12:56:35 PM [23/Feb/2013:12:56:35] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Listening for SIGTERM.
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Bus STARTING
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 12:59:17 PM [23/Feb/2013:12:59:17] ENGINE Bus STARTED
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Listening for SIGTERM.
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Bus STARTING
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:41:32 PM [23/Feb/2013:13:41:32] ENGINE Bus STARTED
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /tv/episode?show=3&season=1&page=0&play=false HTTP/1.1" 200 29056 "http://192.168.0.60:8080/tv/season?id=3&page=0" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&page=0&play=false" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&page=0&play=false" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&page=0&play=false" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&page=0&play=false" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:41:37 PM 192.168.0.60 - - [23/Feb/2013:13:41:37] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&page=0&play=false" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Listening for SIGTERM.
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Bus STARTING
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:42:20 PM [23/Feb/2013:13:42:20] ENGINE Bus STARTED
+02/23/2013 01:48:39 PM [23/Feb/2013:13:48:39] ENGINE Listening for SIGTERM.
+02/23/2013 01:48:39 PM [23/Feb/2013:13:48:39] ENGINE Bus STARTING
+02/23/2013 01:48:39 PM [23/Feb/2013:13:48:39] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:48:39 PM [23/Feb/2013:13:48:39] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:48:40 PM [23/Feb/2013:13:48:40] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:48:40 PM [23/Feb/2013:13:48:40] ENGINE Bus STARTED
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Listening for SIGTERM.
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Bus STARTING
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:54:39 PM [23/Feb/2013:13:54:39] ENGINE Bus STARTED
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Listening for SIGTERM.
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Bus STARTING
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:55:09 PM [23/Feb/2013:13:55:09] ENGINE Bus STARTED
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Listening for SIGTERM.
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Bus STARTING
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:55:33 PM [23/Feb/2013:13:55:33] ENGINE Bus STARTED
+02/23/2013 01:55:54 PM [23/Feb/2013:13:55:54] ENGINE Listening for SIGTERM.
+02/23/2013 01:55:54 PM [23/Feb/2013:13:55:54] ENGINE Bus STARTING
+02/23/2013 01:55:54 PM [23/Feb/2013:13:55:54] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:55:54 PM [23/Feb/2013:13:55:54] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:55:55 PM [23/Feb/2013:13:55:55] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:55:55 PM [23/Feb/2013:13:55:55] ENGINE Bus STARTED
+02/23/2013 01:57:08 PM [23/Feb/2013:13:57:08] ENGINE Listening for SIGTERM.
+02/23/2013 01:57:08 PM [23/Feb/2013:13:57:08] ENGINE Bus STARTING
+02/23/2013 01:57:08 PM [23/Feb/2013:13:57:08] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:57:08 PM [23/Feb/2013:13:57:08] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:57:09 PM [23/Feb/2013:13:57:09] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:57:09 PM [23/Feb/2013:13:57:09] ENGINE Bus STARTED
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Listening for SIGTERM.
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Bus STARTING
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 01:57:33 PM [23/Feb/2013:13:57:33] ENGINE Bus STARTED
+02/23/2013 01:58:07 PM 192.168.0.60 - - [23/Feb/2013:13:58:07] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true HTTP/1.1" 200 29108 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 01:58:40 PM 192.168.0.60 - - [23/Feb/2013:13:58:40] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true HTTP/1.1" 200 29108 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Listening for SIGTERM.
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Bus STARTING
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:02:28 PM [23/Feb/2013:14:02:28] ENGINE Bus STARTED
+02/23/2013 02:02:36 PM 192.168.0.60 - - [23/Feb/2013:14:02:36] "GET /tv/episode?show=3&season=1&id=3558&page=0&play=true HTTP/1.1" 200 29108 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:02:48 PM 192.168.0.60 - - [23/Feb/2013:14:02:48] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:03:38%20GMT HTTP/1.1" 200 29110 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3558&page=0&play=true" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:02:48 PM 192.168.0.60 - - [23/Feb/2013:14:02:48] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3572&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:03:38%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:03:22 PM [23/Feb/2013:14:03:22] ENGINE Listening for SIGTERM.
+02/23/2013 02:03:22 PM [23/Feb/2013:14:03:22] ENGINE Bus STARTING
+02/23/2013 02:03:22 PM [23/Feb/2013:14:03:22] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:03:22 PM [23/Feb/2013:14:03:22] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:03:23 PM [23/Feb/2013:14:03:23] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:03:23 PM [23/Feb/2013:14:03:23] ENGINE Bus STARTED
+02/23/2013 02:03:29 PM 192.168.0.60 - - [23/Feb/2013:14:03:29] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true HTTP/1.1" 200 29109 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Listening for SIGTERM.
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Bus STARTING
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:05:15 PM [23/Feb/2013:14:05:15] ENGINE Bus STARTED
+02/23/2013 02:05:21 PM [23/Feb/2013:14:05:21] ENGINE Listening for SIGTERM.
+02/23/2013 02:05:21 PM [23/Feb/2013:14:05:21] ENGINE Bus STARTING
+02/23/2013 02:05:21 PM [23/Feb/2013:14:05:21] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:05:21 PM [23/Feb/2013:14:05:21] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:05:22 PM [23/Feb/2013:14:05:22] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:05:22 PM [23/Feb/2013:14:05:22] ENGINE Bus STARTED
+02/23/2013 02:05:51 PM 192.168.0.60 - - [23/Feb/2013:14:05:51] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:04:32%20GMT HTTP/1.1" 200 29109 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:06:01 PM 192.168.0.60 - - [23/Feb/2013:14:06:01] "GET /tv/episode?show=3&season=1&id=3558&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:06:56%20GMT HTTP/1.1" 200 29111 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3572&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:04:32%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Listening for SIGTERM.
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Bus STARTING
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:08:37 PM [23/Feb/2013:14:08:37] ENGINE Bus STARTED
+02/23/2013 02:10:37 PM [23/Feb/2013:14:10:37] ENGINE Listening for SIGTERM.
+02/23/2013 02:10:37 PM [23/Feb/2013:14:10:37] ENGINE Bus STARTING
+02/23/2013 02:10:37 PM [23/Feb/2013:14:10:37] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:10:37 PM [23/Feb/2013:14:10:37] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:10:38 PM [23/Feb/2013:14:10:38] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:10:38 PM [23/Feb/2013:14:10:38] ENGINE Bus STARTED
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT HTTP/1.1" 200 29110 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3558&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:06:56%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:49 PM 192.168.0.60 - - [23/Feb/2013:14:10:49] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:10:58 PM 192.168.0.60 - - [23/Feb/2013:14:10:58] "GET /tv/episode?show=3&season=1&id=3558&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:11:52%20GMT HTTP/1.1" 200 29111 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:07:05%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:12:15 PM 192.168.0.60 - - [23/Feb/2013:14:12:15] "GET /tv/episode?show=3&season=1&id=3568&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:12:00%20GMT HTTP/1.1" 200 29112 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3558&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:11:52%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Listening for SIGTERM.
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Bus STARTING
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:22:08 PM [23/Feb/2013:14:22:08] ENGINE Bus STARTED
+02/23/2013 02:22:10 PM >{episode}: Trying to play file that is too old based on date parameter in URL.
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT HTTP/1.1" 200 28943 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3568&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:12:00%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:10 PM 192.168.0.60 - - [23/Feb/2013:14:22:10] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:22:19 PM 192.168.0.60 - - [23/Feb/2013:14:22:19] "GET /tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:23:19%20GMT HTTP/1.1" 200 28945 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3571&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:13:22%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Listening for SIGTERM.
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Bus STARTING
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:25:16 PM [23/Feb/2013:14:25:16] ENGINE Bus STARTED
+02/23/2013 02:25:19 PM 192.168.0.60 - - [23/Feb/2013:14:25:19] "GET /tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:26:18%20GMT HTTP/1.1" 200 28945 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:23:19%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:25:23 PM 192.168.0.60 - - [23/Feb/2013:14:25:23] "GET /tv/episode?show=3&season=1&id=3568&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:26:23%20GMT HTTP/1.1" 200 28945 "http://192.168.0.60:8080/tv/episode?show=3&season=1&id=3564&page=0&play=true&date=Sat,%2023%20Feb%202013%2019:26:18%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Listening for SIGTERM.
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Bus STARTING
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:36:01 PM [23/Feb/2013:14:36:01] ENGINE Bus STARTED
+02/23/2013 02:36:16 PM 192.168.0.60 - - [23/Feb/2013:14:36:16] "GET /tv/episode?show=3&season=1&id=3568&page=0&play=true HTTP/1.1" 200 28920 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:44:58 PM [23/Feb/2013:14:44:58] ENGINE Listening for SIGTERM.
+02/23/2013 02:44:58 PM [23/Feb/2013:14:44:58] ENGINE Bus STARTING
+02/23/2013 02:44:58 PM [23/Feb/2013:14:44:58] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 02:44:58 PM [23/Feb/2013:14:44:58] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 02:44:59 PM [23/Feb/2013:14:44:59] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 02:44:59 PM [23/Feb/2013:14:44:59] ENGINE Bus STARTED
+02/23/2013 02:45:04 PM 192.168.0.60 - - [23/Feb/2013:14:45:04] "GET /tv/episode?show=3&season=1&id=3572&page=0&play=true HTTP/1.1" 200 28924 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 02:45:49 PM [23/Feb/2013:14:45:49] ENGINE Restarting because E:/Code/Python/Worker/Views\Tv.py changed.
+02/23/2013 02:45:49 PM [23/Feb/2013:14:45:49] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 02:45:49 PM [23/Feb/2013:14:45:49] ENGINE Bus STOPPING
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Listening for SIGTERM.
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Bus STARTING
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 07:08:33 PM [23/Feb/2013:19:08:33] ENGINE Bus STARTED
+02/23/2013 07:08:37 PM 192.168.0.24 - - [23/Feb/2013:19:08:37] "GET / HTTP/1.1" 200 15157 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:08:39 PM 192.168.0.24 - - [23/Feb/2013:19:08:39] "GET /movies/movie HTTP/1.1" 200 40796 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:08:39 PM 192.168.0.24 - - [23/Feb/2013:19:08:39] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:08:39 PM 192.168.0.24 - - [23/Feb/2013:19:08:39] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:08:39 PM 192.168.0.24 - - [23/Feb/2013:19:08:39] "GET /images/movie/movie_fanart.png HTTP/1.1" 200 86370 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Listening for SIGTERM.
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Bus STARTING
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 07:09:35 PM [23/Feb/2013:19:09:35] ENGINE Bus STARTED
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /movies/movie HTTP/1.1" 200 40796 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:09:42 PM 192.168.0.24 - - [23/Feb/2013:19:09:42] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Listening for SIGTERM.
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Bus STARTING
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 07:13:26 PM [23/Feb/2013:19:13:26] ENGINE Bus STARTED
+02/23/2013 07:13:29 PM [23/Feb/2013:19:13:29] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 118, in movie
+    movies = self.content.get_movies(page, limit, filter, 'm.parent_dir ASC')
+  File "E:/Code/Python/Worker/Views\Content.py", line 496, in get_movies
+    content["runtime"] = self.convert_runtime_seconds(movie[8])
+  File "E:/Code/Python/Worker/Views\Content.py", line 22, in convert_runtime_seconds
+    hours, minutes = divmod(seconds, 60)
+TypeError: unsupported operand type(s) for divmod(): 'unicode' and 'int'
+
+02/23/2013 07:13:29 PM [23/Feb/2013:19:13:29] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  CACHE-CONTROL: max-age=0
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/23/2013 07:13:29 PM 192.168.0.24 - - [23/Feb/2013:19:13:29] "GET /movies/movie HTTP/1.1" 500 1712 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Restarting because E:/Code/Python/Worker/Views\Content.py changed.
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Bus STOPPING
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Bus STOPPED
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Bus EXITING
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Bus EXITED
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Waiting for child threads to terminate...
+02/23/2013 07:13:53 PM [23/Feb/2013:19:13:53] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Listening for SIGTERM.
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Bus STARTING
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 07:13:55 PM [23/Feb/2013:19:13:55] ENGINE Bus STARTED
+02/23/2013 07:16:01 PM 192.168.0.24 - - [23/Feb/2013:19:16:01] "GET /movies/movie HTTP/1.1" 200 41015 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:16:33 PM 192.168.0.24 - - [23/Feb/2013:19:16:33] "GET /movies/added HTTP/1.1" 200 40628 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Restarting because E:/Code/Python/Worker/Views\Content.py changed.
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Stopped thread 'Autoreloader'.
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Bus STOPPING
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Stopped thread '_TimeoutMonitor'.
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Bus STOPPED
+02/23/2013 07:18:22 PM [23/Feb/2013:19:18:22] ENGINE Bus EXITING
+02/23/2013 07:18:23 PM [23/Feb/2013:19:18:23] ENGINE Bus EXITED
+02/23/2013 07:18:23 PM [23/Feb/2013:19:18:23] ENGINE Waiting for child threads to terminate...
+02/23/2013 07:18:23 PM [23/Feb/2013:19:18:23] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Listening for SIGTERM.
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Bus STARTING
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Started monitor thread 'Autoreloader'.
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Serving on 0.0.0.0:8080
+02/23/2013 07:19:49 PM [23/Feb/2013:19:19:49] ENGINE Bus STARTED
+02/23/2013 07:19:50 PM 192.168.0.24 - - [23/Feb/2013:19:19:50] "GET /movies/added HTTP/1.1" 200 40874 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:20:01 PM 192.168.0.24 - - [23/Feb/2013:19:20:01] "GET /movies/movie HTTP/1.1" 200 41261 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/23/2013 07:20:28 PM 192.168.0.24 - - [23/Feb/2013:19:20:28] "GET /movies/movie?f=s:X HTTP/1.1" 200 20858 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Listening for SIGTERM.
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Bus STARTING
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Started monitor thread 'Autoreloader'.
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Serving on 0.0.0.0:8080
+02/24/2013 05:21:08 PM [24/Feb/2013:17:21:08] ENGINE Bus STARTED
+02/24/2013 05:21:19 PM 192.168.0.24 - - [24/Feb/2013:17:21:19] "GET / HTTP/1.1" 200 15281 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:19 PM 192.168.0.24 - - [24/Feb/2013:17:21:19] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:19 PM 192.168.0.24 - - [24/Feb/2013:17:21:19] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:19 PM 192.168.0.24 - - [24/Feb/2013:17:21:19] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:19 PM 192.168.0.24 - - [24/Feb/2013:17:21:19] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:21 PM 192.168.0.24 - - [24/Feb/2013:17:21:21] "GET /movies/movie HTTP/1.1" 200 41301 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:21 PM 192.168.0.24 - - [24/Feb/2013:17:21:21] "GET /images/movie/the_italian_job_fanart.jpg HTTP/1.1" 200 300700 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:21:21 PM 192.168.0.24 - - [24/Feb/2013:17:21:21] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /movies/movie HTTP/1.1" 200 41303 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 200 70117 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:22:23 PM 192.168.0.24 - - [24/Feb/2013:17:22:23] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:28:30 PM 192.168.0.24 - - [24/Feb/2013:17:28:30] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:28:30 PM 192.168.0.24 - - [24/Feb/2013:17:28:30] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 200 2951 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:37:44 PM 192.168.0.24 - - [24/Feb/2013:17:37:44] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:02 PM 192.168.0.24 - - [24/Feb/2013:17:38:02] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:02 PM 192.168.0.24 - - [24/Feb/2013:17:38:02] "GET /styles.css HTTP/1.1" 200 2450 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:03 PM 192.168.0.24 - - [24/Feb/2013:17:38:03] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /styles.css HTTP/1.1" 200 2450 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:14 PM 192.168.0.24 - - [24/Feb/2013:17:38:14] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:22 PM 192.168.0.24 - - [24/Feb/2013:17:38:22] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:22 PM 192.168.0.24 - - [24/Feb/2013:17:38:22] "GET /styles.css HTTP/1.1" 200 2452 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:23 PM 192.168.0.24 - - [24/Feb/2013:17:38:23] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /styles.css HTTP/1.1" 200 2452 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:39 PM 192.168.0.24 - - [24/Feb/2013:17:38:39] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /styles.css HTTP/1.1" 200 2452 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:38:51 PM 192.168.0.24 - - [24/Feb/2013:17:38:51] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /movies/movie HTTP/1.1" 200 41593 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /styles.css HTTP/1.1" 200 2452 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:39:01 PM 192.168.0.24 - - [24/Feb/2013:17:39:01] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /movies/movie HTTP/1.1" 200 41610 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/movie/the_italian_job_2_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:40:13 PM 192.168.0.24 - - [24/Feb/2013:17:40:13] "GET /images/movie/movie_fanart.png HTTP/1.1" 200 78865 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /movies/movie HTTP/1.1" 200 41568 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 05:41:04 PM 192.168.0.24 - - [24/Feb/2013:17:41:04] "GET /images/movie/movie_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Listening for SIGTERM.
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Bus STARTING
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Started monitor thread 'Autoreloader'.
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Serving on 0.0.0.0:8080
+02/24/2013 07:12:00 PM [24/Feb/2013:19:12:00] ENGINE Bus STARTED
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /movies/movie HTTP/1.1" 200 41816 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/9476_poster.jpg HTTP/1.1" 200 18100 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/9772_poster.jpg HTTP/1.1" 200 14069 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/1271_poster.jpg HTTP/1.1" 200 19009 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/62206_poster.jpg HTTP/1.1" 200 22365 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/72331_poster.jpg HTTP/1.1" 200 15690 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/1562_poster.jpg HTTP/1.1" 200 20213 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/64688_poster.jpg HTTP/1.1" 200 21895 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/23437_poster.jpg HTTP/1.1" 200 13254 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/9273_poster.jpg HTTP/1.1" 200 25195 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/8409_poster.jpg HTTP/1.1" 200 11515 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/9487_poster.jpg HTTP/1.1" 200 14678 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/14161_poster.jpg HTTP/1.1" 200 19481 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/42941_poster.jpg HTTP/1.1" 200 21844 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/170_poster.jpg HTTP/1.1" 200 12315 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/55465_poster.jpg HTTP/1.1" 200 20304 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/4513_poster.jpg HTTP/1.1" 200 16201 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:04 PM 192.168.0.24 - - [24/Feb/2013:19:12:04] "GET /images/movie/584_poster.jpg HTTP/1.1" 200 20595 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:24 PM @(Movie.py)>{movie}: Error converting UTC Javascript date for Mon, 25 Feb 2013 00:12:00 GMT.
+02/24/2013 07:12:24 PM 192.168.0.24 - - [24/Feb/2013:19:12:24] "GET /movies/movie?id=219&page=0&play=true&f=&date=Mon%2C%2025%20Feb%202013%2000%3A12%3A00%20GMT HTTP/1.1" 200 41816 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/24/2013 07:12:32 PM @(Movie.py)>{movie}: Error converting UTC Javascript date for Mon, 25 Feb 2013 00:12:08 GMT.
+02/24/2013 07:12:32 PM 192.168.0.24 - - [24/Feb/2013:19:12:32] "GET /movies/movie?id=461&page=0&play=true&f=&date=Mon%2C%2025%20Feb%202013%2000%3A12%3A08%20GMT HTTP/1.1" 200 41816 "http://192.168.0.60:8080/movies/movie?id=219&page=0&play=true&f=&date=Mon%2C%2025%20Feb%202013%2000%3A12%3A00%20GMT" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:50 AM [25/Feb/2013:09:46:50] ENGINE Listening for SIGTERM.
+02/25/2013 09:46:50 AM [25/Feb/2013:09:46:50] ENGINE Bus STARTING
+02/25/2013 09:46:50 AM [25/Feb/2013:09:46:50] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/25/2013 09:46:50 AM [25/Feb/2013:09:46:50] ENGINE Started monitor thread 'Autoreloader'.
+02/25/2013 09:46:51 AM [25/Feb/2013:09:46:51] ENGINE Serving on 0.0.0.0:8080
+02/25/2013 09:46:51 AM [25/Feb/2013:09:46:51] ENGINE Bus STARTED
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /movies/movie HTTP/1.1" 200 41788 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /styles.css HTTP/1.1" 200 2601 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 200 2951 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/1271_poster.jpg HTTP/1.1" 200 19009 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/9476_poster.jpg HTTP/1.1" 200 18100 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/72331_poster.jpg HTTP/1.1" 200 15690 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/62206_poster.jpg HTTP/1.1" 200 22365 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/9772_poster.jpg HTTP/1.1" 200 14069 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/1562_poster.jpg HTTP/1.1" 200 20213 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/64688_poster.jpg HTTP/1.1" 200 21895 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/23437_poster.jpg HTTP/1.1" 200 13254 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/9273_poster.jpg HTTP/1.1" 200 25195 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/8409_poster.jpg HTTP/1.1" 200 11515 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/9487_poster.jpg HTTP/1.1" 200 14678 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/14161_poster.jpg HTTP/1.1" 200 19481 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/42941_poster.jpg HTTP/1.1" 200 21844 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/170_poster.jpg HTTP/1.1" 200 12315 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/55465_poster.jpg HTTP/1.1" 200 20304 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/4513_poster.jpg HTTP/1.1" 200 16201 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:46:59 AM 192.168.0.60 - - [25/Feb/2013:09:46:59] "GET /images/movie/584_poster.jpg HTTP/1.1" 200 20595 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Listening for SIGTERM.
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Bus STARTING
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Started monitor thread 'Autoreloader'.
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Serving on 0.0.0.0:8080
+02/25/2013 08:43:19 PM [25/Feb/2013:20:43:19] ENGINE Bus STARTED
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET / HTTP/1.1" 200 15281 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET /styles.css HTTP/1.1" 200 2601 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:23 PM 192.168.0.60 - - [25/Feb/2013:20:43:23] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:25 PM [25/Feb/2013:20:43:25] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 131, in movie
+    tmpl = lookup.get_template("movies/movies.html")
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 240, in get_template
+    return self._load(srcfile, uri)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 306, in _load
+    **self.template_args)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 291, in __init__
+    module = self._compile_from_file(path, filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 368, in _compile_from_file
+    filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 615, in _compile_text
+    generate_magic_comment=template.disable_unicode)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 597, in _compile
+    node = lexer.parse()
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 231, in parse
+    if self.match_expression():
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 385, in match_expression
+    text, end = self.parse_until_text(r'\|', r'}')
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 124, in parse_until_text
+    **self.exception_kwargs)
+SyntaxException: Expected: \|,} in file 'templates/movies/movies.html' at line: 205 char: 30
+
+02/25/2013 08:43:25 PM [25/Feb/2013:20:43:25] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.60
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/25/2013 08:43:25 PM 192.168.0.60 - - [25/Feb/2013:20:43:25] "GET /movies/movie HTTP/1.1" 500 2679 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:50 PM 192.168.0.60 - - [25/Feb/2013:20:43:50] "GET /movies/movie HTTP/1.1" 200 41761 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/1271_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/9476_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/9772_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/62206_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/72331_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/1562_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/64688_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/23437_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/9273_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/8409_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/9487_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/14161_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/42941_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/170_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/55465_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/4513_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:43:51 PM 192.168.0.60 - - [25/Feb/2013:20:43:51] "GET /images/movie/584_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:21 PM [25/Feb/2013:20:44:21] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 131, in movie
+    tmpl = lookup.get_template("movies/movies.html")
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 232, in get_template
+    return self._check(uri, self._collection[uri])
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 326, in _check
+    return self._load(template.filename, uri)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 306, in _load
+    **self.template_args)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 291, in __init__
+    module = self._compile_from_file(path, filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 368, in _compile_from_file
+    filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 615, in _compile_text
+    generate_magic_comment=template.disable_unicode)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 597, in _compile
+    node = lexer.parse()
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 231, in parse
+    if self.match_expression():
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 385, in match_expression
+    text, end = self.parse_until_text(r'\|', r'}')
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 124, in parse_until_text
+    **self.exception_kwargs)
+SyntaxException: Expected: \|,} in file 'templates/movies/movies.html' at line: 205 char: 30
+
+02/25/2013 08:44:21 PM [25/Feb/2013:20:44:21] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  CACHE-CONTROL: max-age=0
+  Remote-Addr: 192.168.0.60
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/25/2013 08:44:21 PM 192.168.0.60 - - [25/Feb/2013:20:44:21] "GET /movies/movie HTTP/1.1" 500 2836 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:49 PM 192.168.0.60 - - [25/Feb/2013:20:44:49] "GET /movies/movie HTTP/1.1" 200 41496 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:49 PM 192.168.0.60 - - [25/Feb/2013:20:44:49] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:49 PM 192.168.0.60 - - [25/Feb/2013:20:44:49] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:49] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/1271_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/9476_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/9772_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/62206_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/72331_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/1562_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/64688_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/23437_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/9273_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/8409_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/9487_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/14161_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/42941_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/170_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/55465_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/4513_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 08:44:50 PM 192.168.0.60 - - [25/Feb/2013:20:44:50] "GET /images/movie/584_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:10:41 PM [25/Feb/2013:21:10:41] ENGINE Listening for SIGTERM.
+02/25/2013 09:10:41 PM [25/Feb/2013:21:10:41] ENGINE Bus STARTING
+02/25/2013 09:10:41 PM [25/Feb/2013:21:10:41] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/25/2013 09:10:41 PM [25/Feb/2013:21:10:41] ENGINE Started monitor thread 'Autoreloader'.
+02/25/2013 09:10:46 PM 192.168.0.60 - - [25/Feb/2013:21:10:46] "GET /movies/movie HTTP/1.1" 200 41994 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:10:46 PM 192.168.0.60 - - [25/Feb/2013:21:10:46] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x0000000002E0E710>>
+Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 197, in publish
+    output.append(listener(*args, **kwargs))
+  File "E:\Python27\lib\site-packages\cherrypy\_cpserver.py", line 151, in start
+    ServerAdapter.start(self)
+  File "E:\Python27\lib\site-packages\cherrypy\process\servers.py", line 167, in start
+    wait_for_free_port(*self.bind_addr)
+  File "E:\Python27\lib\site-packages\cherrypy\process\servers.py", line 410, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 235, in start
+    self.publish('start')
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 215, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Bus STOPPING
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Stopped thread 'Autoreloader'.
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Stopped thread '_TimeoutMonitor'.
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Bus STOPPED
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Bus EXITING
+02/25/2013 09:10:46 PM [25/Feb/2013:21:10:46] ENGINE Bus EXITED
+02/25/2013 09:10:53 PM [25/Feb/2013:21:10:53] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 80, in added
+    , id = id)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 412, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 766, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 798, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 824, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "movies_movies_html", line 81, in render_body
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\filters.py", line 61, in decode
+    return unicode(str(x), encoding=key)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 194, in __str__
+    raise NameError("Undefined")
+NameError: Undefined
+
+02/25/2013 09:10:53 PM [25/Feb/2013:21:10:53] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/movies/movie
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.60
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/25/2013 09:10:53 PM 192.168.0.60 - - [25/Feb/2013:21:10:53] "GET /movies/added HTTP/1.1" 500 2273 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:12:15 PM 192.168.0.60 - - [25/Feb/2013:21:12:15] "GET /movies/movie HTTP/1.1" 200 41994 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:12:55 PM 192.168.0.60 - - [25/Feb/2013:21:12:55] "GET /index HTTP/1.1" 200 15281 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:12:57 PM [25/Feb/2013:21:12:57] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Movie.py", line 80, in added
+    , id = id)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 412, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 766, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 798, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 824, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "movies_movies_html", line 81, in render_body
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\filters.py", line 61, in decode
+    return unicode(str(x), encoding=key)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 194, in __str__
+    raise NameError("Undefined")
+NameError: Undefined
+
+02/25/2013 09:12:57 PM [25/Feb/2013:21:12:57] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/index
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.60
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+02/25/2013 09:12:57 PM 192.168.0.60 - - [25/Feb/2013:21:12:57] "GET /movies/added HTTP/1.1" 500 2273 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:13:22 PM [25/Feb/2013:21:13:22] ENGINE Restarting because E:/Code/Python/Worker/Views\Movie.py changed.
+02/25/2013 09:13:22 PM [25/Feb/2013:21:13:22] ENGINE Stopped thread 'Autoreloader'.
+02/25/2013 09:13:22 PM [25/Feb/2013:21:13:22] ENGINE Bus STOPPING
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) shut down
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Stopped thread '_TimeoutMonitor'.
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Bus STOPPED
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Bus EXITING
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Bus EXITED
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Waiting for child threads to terminate...
+02/25/2013 09:13:23 PM [25/Feb/2013:21:13:23] ENGINE Re-spawning E:/Code/Python/Worker/Views/MediaUI.py
+02/25/2013 09:14:01 PM [25/Feb/2013:21:14:01] ENGINE Listening for SIGTERM.
+02/25/2013 09:14:01 PM [25/Feb/2013:21:14:01] ENGINE Bus STARTING
+02/25/2013 09:14:01 PM [25/Feb/2013:21:14:01] ENGINE Started monitor thread '_TimeoutMonitor'.
+02/25/2013 09:14:01 PM [25/Feb/2013:21:14:01] ENGINE Started monitor thread 'Autoreloader'.
+02/25/2013 09:14:02 PM [25/Feb/2013:21:14:02] ENGINE Serving on 0.0.0.0:8080
+02/25/2013 09:14:02 PM [25/Feb/2013:21:14:02] ENGINE Bus STARTED
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /movies/added HTTP/1.1" 200 41281 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/38684_poster.jpg HTTP/1.1" 200 8296 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/8095_poster.jpg HTTP/1.1" 200 23695 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/68660_poster.jpg HTTP/1.1" 200 19968 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/4584_poster.jpg HTTP/1.1" 200 14621 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/1439_poster.jpg HTTP/1.1" 200 17729 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:10 PM 192.168.0.60 - - [25/Feb/2013:21:14:10] "GET /images/movie/1934_poster.jpg HTTP/1.1" 200 14097 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/11708_poster.jpg HTTP/1.1" 200 20342 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/10436_poster.jpg HTTP/1.1" 200 15527 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/4518_poster.jpg HTTP/1.1" 200 19775 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/770_poster.jpg HTTP/1.1" 200 14419 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/4347_poster.jpg HTTP/1.1" 200 19730 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/9444_poster.jpg HTTP/1.1" 200 15501 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/3573_poster.jpg HTTP/1.1" 200 11633 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/40724_poster.jpg HTTP/1.1" 200 17501 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/11632_poster.jpg HTTP/1.1" 200 12650 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:11 PM 192.168.0.60 - - [25/Feb/2013:21:14:11] "GET /images/movie/16236_poster.jpg HTTP/1.1" 200 10851 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:13 PM 192.168.0.60 - - [25/Feb/2013:21:14:13] "GET /movies/added HTTP/1.1" 200 41281 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:16 PM 192.168.0.60 - - [25/Feb/2013:21:14:16] "GET /movies/movie HTTP/1.1" 200 41994 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:18 PM 192.168.0.60 - - [25/Feb/2013:21:14:18] "GET /movies/added HTTP/1.1" 200 41281 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /tv/show HTTP/1.1" 200 26291 "http://192.168.0.60:8080/movies/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/tv_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/beautyandthebeast_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/codegeass-lelouchoftherebellion_fanart.jpg HTTP/1.1" 200 36044 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/chuck_fanart.jpg HTTP/1.1" 200 24795 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/fallingskies_fanart.jpg HTTP/1.1" 200 21567 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/community_fanart.jpg HTTP/1.1" 200 42331 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/arresteddevelopment_fanart.jpg HTTP/1.1" 200 44724 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/firefly_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/fringe_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/curbyourenthusiasm_fanart.jpg HTTP/1.1" 200 26625 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/24_fanart.jpg HTTP/1.1" 200 33582 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:21 PM 192.168.0.60 - - [25/Feb/2013:21:14:21] "GET /images/tv/alcatraz_fanart.jpg HTTP/1.1" 200 30966 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /tv/added HTTP/1.1" 200 29669 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:23 PM 192.168.0.60 - - [25/Feb/2013:21:14:23] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /tv/added HTTP/1.1" 200 29669 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:57 PM 192.168.0.60 - - [25/Feb/2013:21:14:57] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /tv/added HTTP/1.1" 200 29669 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:14:59 PM 192.168.0.60 - - [25/Feb/2013:21:14:59] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:15:03 PM 192.168.0.60 - - [25/Feb/2013:21:15:03] "GET /movies/movie HTTP/1.1" 200 42009 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:05 PM 192.168.0.60 - - [25/Feb/2013:21:16:05] "GET /movies/movie HTTP/1.1" 200 42011 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /movies/movie HTTP/1.1" 200 42025 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/1271_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/9476_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/9772_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/62206_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/72331_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/1562_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/64688_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/23437_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/9273_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/8409_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/9487_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/14161_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/42941_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/170_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/55465_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/4513_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:20 PM 192.168.0.60 - - [25/Feb/2013:21:16:20] "GET /images/movie/584_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /movies/movie HTTP/1.1" 200 42011 "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/ClassicFrame_Poster_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/1271_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/9476_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/9772_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/62206_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/72331_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/1562_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/64688_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/23437_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/9273_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/8409_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/9487_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/14161_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/42941_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/170_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/55465_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/4513_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+02/25/2013 09:16:35 PM 192.168.0.60 - - [25/Feb/2013:21:16:35] "GET /images/movie/584_poster.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/movies/movie" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:56:54 PM [04/Mar/2013:14:56:54] ENGINE Listening for SIGTERM.
+03/04/2013 02:56:54 PM [04/Mar/2013:14:56:54] ENGINE Bus STARTING
+03/04/2013 02:56:54 PM [04/Mar/2013:14:56:54] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/04/2013 02:56:54 PM [04/Mar/2013:14:56:54] ENGINE Started monitor thread 'Autoreloader'.
+03/04/2013 02:56:55 PM [04/Mar/2013:14:56:55] ENGINE Serving on 0.0.0.0:8080
+03/04/2013 02:56:55 PM [04/Mar/2013:14:56:55] ENGINE Bus STARTED
+03/04/2013 02:57:08 PM 192.168.0.60 - - [04/Mar/2013:14:57:08] "GET / HTTP/1.1" 200 15075 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:57:09 PM 192.168.0.60 - - [04/Mar/2013:14:57:09] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:57:09 PM 192.168.0.60 - - [04/Mar/2013:14:57:09] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:57:09 PM 192.168.0.60 - - [04/Mar/2013:14:57:09] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:57:09 PM 192.168.0.60 - - [04/Mar/2013:14:57:09] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 02:57:09 PM 192.168.0.60 - - [04/Mar/2013:14:57:09] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Listening for SIGTERM.
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Bus STARTING
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Started monitor thread 'Autoreloader'.
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Serving on 0.0.0.0:8080
+03/04/2013 03:01:17 PM [04/Mar/2013:15:01:17] ENGINE Bus STARTED
+03/04/2013 03:01:22 PM 192.168.0.60 - - [04/Mar/2013:15:01:22] "GET / HTTP/1.1" 200 15202 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET / HTTP/1.1" 200 15204 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/04/2013 03:01:57 PM 192.168.0.60 - - [04/Mar/2013:15:01:57] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Listening for SIGTERM.
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Bus STARTING
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Started monitor thread 'Autoreloader'.
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Serving on 0.0.0.0:8080
+03/05/2013 05:04:40 PM [05/Mar/2013:17:04:40] ENGINE Bus STARTED
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET / HTTP/1.1" 200 15145 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /styles.css HTTP/1.1" 200 2601 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /images/tvshows.png HTTP/1.1" 200 218535 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /images/shutdown.png HTTP/1.1" 200 105770 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /images/movies.png HTTP/1.1" 200 193388 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /images/background_3.jpg HTTP/1.1" 200 474962 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:04:49 PM 192.168.0.24 - - [05/Mar/2013:17:04:49] "GET /favicon.ico HTTP/1.1" 200 1406 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:05:36 PM [05/Mar/2013:17:05:36] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views/MediaUI.py", line 44, in index
+    tmpl = lookup.get_template("index.htm")
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 232, in get_template
+    return self._check(uri, self._collection[uri])
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 326, in _check
+    return self._load(template.filename, uri)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 306, in _load
+    **self.template_args)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 291, in __init__
+    module = self._compile_from_file(path, filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 368, in _compile_from_file
+    filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 615, in _compile_text
+    generate_magic_comment=template.disable_unicode)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 597, in _compile
+    node = lexer.parse()
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 231, in parse
+    if self.match_expression():
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 394, in match_expression
+    lineno=line, pos=pos)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 131, in append_node
+    node = nodecls(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\parsetree.py", line 180, in __init__
+    self.code = ast.PythonCode(text, **self.exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\ast.py", line 37, in __init__
+    expr = pyparser.parse(code.lstrip(), "exec", **exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\pyparser.py", line 60, in parse
+    ), **exception_kwargs)
+SyntaxException: (SyntaxError) unexpected character after line continuation character (<unknown>, line 1) (u"desc.replace('\\','\\\\\\'')") in file 'templates/index.htm' at line: 23 char: 102
+
+03/05/2013 05:05:36 PM [05/Mar/2013:17:05:36] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/05/2013 05:05:36 PM 192.168.0.24 - - [05/Mar/2013:17:05:36] "GET / HTTP/1.1" 500 3359 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:06:56 PM 192.168.0.24 - - [05/Mar/2013:17:06:56] "GET / HTTP/1.1" 200 15157 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:07:13 PM 192.168.0.24 - - [05/Mar/2013:17:07:13] "GET / HTTP/1.1" 200 15241 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:08:06 PM 192.168.0.24 - - [05/Mar/2013:17:08:06] "GET / HTTP/1.1" 200 15241 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:08:33 PM 192.168.0.24 - - [05/Mar/2013:17:08:33] "GET / HTTP/1.1" 200 15241 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Listening for SIGTERM.
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Bus STARTING
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Started monitor thread 'Autoreloader'.
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Serving on 0.0.0.0:8080
+03/05/2013 05:11:58 PM [05/Mar/2013:17:11:58] ENGINE Bus STARTED
+03/05/2013 05:12:10 PM 192.168.0.24 - - [05/Mar/2013:17:12:10] "GET /index HTTP/1.1" 200 12625 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:12:20 PM [05/Mar/2013:17:12:20] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views/MediaUI.py", line 46, in index
+    , movies=self.content.get_movies(0, 5, None, 'm.added DESC'))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 412, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 766, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 798, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 824, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "index_htm", line 38, in render_body
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 0: ordinal not in range(128)
+
+03/05/2013 05:12:20 PM [05/Mar/2013:17:12:20] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/05/2013 05:12:20 PM 192.168.0.24 - - [05/Mar/2013:17:12:20] "GET /index HTTP/1.1" 500 2126 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:12:37 PM [05/Mar/2013:17:12:37] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views/MediaUI.py", line 46, in index
+    , movies=self.content.get_movies(0, 5, None, 'm.added DESC'))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 412, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 766, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 798, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 824, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "index_htm", line 38, in render_body
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 0: ordinal not in range(128)
+
+03/05/2013 05:12:37 PM [05/Mar/2013:17:12:37] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/05/2013 05:12:37 PM 192.168.0.24 - - [05/Mar/2013:17:12:37] "GET /index HTTP/1.1" 500 2126 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:12:45 PM 192.168.0.24 - - [05/Mar/2013:17:12:45] "GET /index HTTP/1.1" 200 15145 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:33 PM 192.168.0.24 - - [05/Mar/2013:17:13:33] "GET /index HTTP/1.1" 200 15241 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:41 PM 192.168.0.24 - - [05/Mar/2013:17:13:41] "GET /index HTTP/1.1" 200 13901 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /tv/show HTTP/1.1" 200 26291 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/tv_fanart.png HTTP/1.1" 200 78209 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 200 3762 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/unwatched.png HTTP/1.1" 200 593 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/fallingskies_fanart.jpg HTTP/1.1" 200 21567 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 200 246370 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 200 249003 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/chuck_fanart.jpg HTTP/1.1" 200 24795 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/codegeass-lelouchoftherebellion_fanart.jpg HTTP/1.1" 200 36044 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/beautyandthebeast_fanart.jpg HTTP/1.1" 200 163808 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 200 259155 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/community_fanart.jpg HTTP/1.1" 200 42331 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/arresteddevelopment_fanart.jpg HTTP/1.1" 200 44724 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/firefly_fanart.jpg HTTP/1.1" 200 277284 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 200 211022 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 200 261460 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/curbyourenthusiasm_fanart.jpg HTTP/1.1" 200 26625 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/fringe_fanart.jpg HTTP/1.1" 200 252594 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/24_fanart.jpg HTTP/1.1" 200 33582 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:13:50 PM 192.168.0.24 - - [05/Mar/2013:17:13:50] "GET /images/tv/alcatraz_fanart.jpg HTTP/1.1" 200 30966 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:14:07 PM 192.168.0.24 - - [05/Mar/2013:17:14:07] "GET /index HTTP/1.1" 200 15241 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /index HTTP/1.1" 200 15233 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:40 PM 192.168.0.24 - - [05/Mar/2013:17:15:40] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /index HTTP/1.1" 200 15233 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:15:44 PM 192.168.0.24 - - [05/Mar/2013:17:15:44] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:16:49 PM [05/Mar/2013:17:16:49] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views/MediaUI.py", line 44, in index
+    tmpl = lookup.get_template("index.htm")
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 232, in get_template
+    return self._check(uri, self._collection[uri])
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 326, in _check
+    return self._load(template.filename, uri)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 306, in _load
+    **self.template_args)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 291, in __init__
+    module = self._compile_from_file(path, filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 368, in _compile_from_file
+    filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 615, in _compile_text
+    generate_magic_comment=template.disable_unicode)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 597, in _compile
+    node = lexer.parse()
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 231, in parse
+    if self.match_expression():
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 394, in match_expression
+    lineno=line, pos=pos)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 131, in append_node
+    node = nodecls(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\parsetree.py", line 180, in __init__
+    self.code = ast.PythonCode(text, **self.exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\ast.py", line 37, in __init__
+    expr = pyparser.parse(code.lstrip(), "exec", **exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\pyparser.py", line 60, in parse
+    ), **exception_kwargs)
+SyntaxException: (SyntaxError) invalid syntax (<unknown>, line 1) (u'desc.replace(\'\\\'\', \'\\\\\\\'\')}")\n                % en') in file 'templates/index.htm' at line: 23 char: 102
+
+03/05/2013 05:16:49 PM [05/Mar/2013:17:16:49] HTTP 
+Request Headers:
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/05/2013 05:16:49 PM 192.168.0.24 - - [05/Mar/2013:17:16:49] "GET /index HTTP/1.1" 500 3352 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:17:59 PM 192.168.0.24 - - [05/Mar/2013:17:17:59] "GET /index HTTP/1.1" 200 15221 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:20:22 PM 192.168.0.24 - - [05/Mar/2013:17:20:22] "GET /index HTTP/1.1" 200 15269 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:20:27 PM 192.168.0.24 - - [05/Mar/2013:17:20:27] "GET /index HTTP/1.1" 200 15269 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:21:00 PM 192.168.0.24 - - [05/Mar/2013:17:21:00] "GET /index HTTP/1.1" 200 14411 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:21:16 PM 192.168.0.24 - - [05/Mar/2013:17:21:16] "GET /index HTTP/1.1" 200 15229 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:21:38 PM 192.168.0.24 - - [05/Mar/2013:17:21:38] "GET /index HTTP/1.1" 200 15416 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:21:57 PM 192.168.0.24 - - [05/Mar/2013:17:21:57] "GET /index HTTP/1.1" 200 15536 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:08 PM 192.168.0.24 - - [05/Mar/2013:17:22:08] "GET /index HTTP/1.1" 200 15481 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:11 PM 192.168.0.24 - - [05/Mar/2013:17:22:11] "GET /index HTTP/1.1" 200 15481 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /tv/added HTTP/1.1" 200 29725 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /images/watched.png HTTP/1.1" 200 889 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 200 358285 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 200 212323 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 200 214966 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:22:35 PM 192.168.0.24 - - [05/Mar/2013:17:22:35] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 200 251729 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:23:09 PM [05/Mar/2013:17:23:09] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views/MediaUI.py", line 44, in index
+    tmpl = lookup.get_template("index.htm")
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 232, in get_template
+    return self._check(uri, self._collection[uri])
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 326, in _check
+    return self._load(template.filename, uri)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lookup.py", line 306, in _load
+    **self.template_args)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 291, in __init__
+    module = self._compile_from_file(path, filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 368, in _compile_from_file
+    filename)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 615, in _compile_text
+    generate_magic_comment=template.disable_unicode)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 597, in _compile
+    node = lexer.parse()
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 231, in parse
+    if self.match_expression():
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 394, in match_expression
+    lineno=line, pos=pos)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\lexer.py", line 131, in append_node
+    node = nodecls(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\parsetree.py", line 180, in __init__
+    self.code = ast.PythonCode(text, **self.exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\ast.py", line 37, in __init__
+    expr = pyparser.parse(code.lstrip(), "exec", **exception_kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\pyparser.py", line 60, in parse
+    ), **exception_kwargs)
+SyntaxException: (SyntaxError) unexpected EOF while parsing (<unknown>, line 1) (u"desc.replace('\\n', ''") in file 'templates/index.htm' at line: 23 char: 102
+
+03/05/2013 05:23:09 PM [05/Mar/2013:17:23:09] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/tv/added
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.24
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/05/2013 05:23:09 PM 192.168.0.24 - - [05/Mar/2013:17:23:09] "GET /index HTTP/1.1" 500 3327 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:23:18 PM 192.168.0.24 - - [05/Mar/2013:17:23:18] "GET /index HTTP/1.1" 200 15227 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:23:43 PM 192.168.0.24 - - [05/Mar/2013:17:23:43] "GET /index HTTP/1.1" 200 15143 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Listening for SIGTERM.
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Bus STARTING
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Started monitor thread 'Autoreloader'.
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Serving on 0.0.0.0:8080
+03/05/2013 05:36:51 PM [05/Mar/2013:17:36:51] ENGINE Bus STARTED
+03/05/2013 05:36:57 PM 192.168.0.24 - - [05/Mar/2013:17:36:57] "GET /index HTTP/1.1" 200 15145 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/11/2013 11:10:33 AM [11/Mar/2013:11:10:33] ENGINE Listening for SIGTERM.
+03/11/2013 11:10:33 AM [11/Mar/2013:11:10:33] ENGINE Bus STARTING
+03/11/2013 11:10:33 AM [11/Mar/2013:11:10:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/11/2013 11:10:33 AM [11/Mar/2013:11:10:33] ENGINE Started monitor thread 'Autoreloader'.
+03/11/2013 11:10:38 AM [11/Mar/2013:11:10:38] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x0000000002C28B00>>
+Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 197, in publish
+    output.append(listener(*args, **kwargs))
+  File "E:\Python27\lib\site-packages\cherrypy\_cpserver.py", line 151, in start
+    ServerAdapter.start(self)
+  File "E:\Python27\lib\site-packages\cherrypy\process\servers.py", line 167, in start
+    wait_for_free_port(*self.bind_addr)
+  File "E:\Python27\lib\site-packages\cherrypy\process\servers.py", line 410, in wait_for_free_port
+    raise IOError("Port %r not free on %r" % (port, host))
+IOError: Port 8080 not free on '0.0.0.0'
+
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 235, in start
+    self.publish('start')
+  File "E:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 215, in publish
+    raise exc
+ChannelFailures: IOError("Port 8080 not free on '0.0.0.0'",)
+
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Bus STOPPING
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8080)) already shut down
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Stopped thread '_TimeoutMonitor'.
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Stopped thread 'Autoreloader'.
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Bus STOPPED
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Bus EXITING
+03/11/2013 11:10:39 AM [11/Mar/2013:11:10:39] ENGINE Bus EXITED
+03/11/2013 11:10:44 AM 192.168.0.60 - - [11/Mar/2013:11:10:44] "GET / HTTP/1.1" 200 15082 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:10:45 AM 192.168.0.60 - - [11/Mar/2013:11:10:45] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:10:45 AM 192.168.0.60 - - [11/Mar/2013:11:10:45] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:10:45 AM 192.168.0.60 - - [11/Mar/2013:11:10:45] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:10:45 AM 192.168.0.60 - - [11/Mar/2013:11:10:45] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:10:45 AM 192.168.0.60 - - [11/Mar/2013:11:10:45] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:20 AM 192.168.0.60 - - [11/Mar/2013:11:11:20] "GET / HTTP/1.1" 200 15150 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /tv/show HTTP/1.1" 200 26290 "http://192.168.0.60:8080/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/tv_fanart.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/codegeass-lelouchoftherebellion_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/beautyandthebeast_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/chuck_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/fallingskies_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/community_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/arresteddevelopment_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/firefly_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/fringe_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/curbyourenthusiasm_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/24_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:25 AM 192.168.0.60 - - [11/Mar/2013:11:11:25] "GET /images/tv/alcatraz_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/11/2013 11:11:32 AM 192.168.0.60 - - [11/Mar/2013:11:11:32] "GET /index HTTP/1.1" 200 15150 "http://192.168.0.60:8080/tv/show" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0"
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Listening for SIGTERM.
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Bus STARTING
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Started monitor thread '_TimeoutMonitor'.
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Started monitor thread 'Autoreloader'.
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Serving on 0.0.0.0:8080
+03/15/2013 10:08:54 AM [15/Mar/2013:10:08:54] ENGINE Bus STARTED
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /tv/added HTTP/1.1" 200 29758 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:06 AM 192.168.0.60 - - [15/Mar/2013:10:09:06] "GET /images/tv/nikita_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:18 AM 192.168.0.60 - - [15/Mar/2013:10:09:18] "GET /index HTTP/1.1" 200 15267 "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:18 AM 192.168.0.60 - - [15/Mar/2013:10:09:18] "GET /images/tvshows.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:18 AM 192.168.0.60 - - [15/Mar/2013:10:09:18] "GET /images/movies.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/15/2013 10:09:18 AM 192.168.0.60 - - [15/Mar/2013:10:09:18] "GET /images/shutdown.png HTTP/1.1" 304 - "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:08:28 PM [19/Mar/2013:19:08:28] HTTP Traceback (most recent call last):
+  File "E:\Python27\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "E:\Python27\lib\site-packages\cherrypy\lib\encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "E:\Python27\lib\site-packages\cherrypy\_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "E:/Code/Python/Worker/Views\Tv.py", line 56, in added
+    , filterLetters = filterLetters)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\template.py", line 412, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 766, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 798, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\Python27\lib\site-packages\mako-0.7.3-py2.7.egg\mako\runtime.py", line 824, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "tv_added_html", line 59, in render_body
+UnboundLocalError: local variable 'show' referenced before assignment
+
+03/19/2013 07:08:28 PM [19/Mar/2013:19:08:28] HTTP 
+Request Headers:
+  REFERER: http://192.168.0.60:8080/index
+  HOST: 192.168.0.60:8080
+  CONNECTION: keep-alive
+  Remote-Addr: 192.168.0.60
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+  ACCEPT-LANGUAGE: en-US,en;q=0.5
+  ACCEPT-ENCODING: gzip, deflate
+03/19/2013 07:08:28 PM 192.168.0.60 - - [19/Mar/2013:19:08:28] "GET /tv/added HTTP/1.1" 500 2068 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /tv/added HTTP/1.1" 200 30942 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:10:51 PM 192.168.0.60 - - [19/Mar/2013:19:10:51] "GET /images/tv/nikita_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /tv/added HTTP/1.1" 200 30617 "http://192.168.0.60:8080/index" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /styles.css HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/background_3.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/ClassicFrame_Fanart_small.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/unwatched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/watched.png HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/thesimpsons_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/arrow_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/thebiggestloser_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/familyguy_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/americandad_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/thevampirediaries_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/theofficeus_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/bones_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/glee_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/elementary_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/thewalkingdead_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
+03/19/2013 07:13:16 PM 192.168.0.60 - - [19/Mar/2013:19:13:16] "GET /images/tv/nikita_fanart.jpg HTTP/1.1" 304 - "http://192.168.0.60:8080/tv/added" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0"
