@@ -1,5 +1,4 @@
 #Ignore files
-media - Copy.sqlite
 popcorn.db
 popcorn.sql
 Views/images/movie/*
