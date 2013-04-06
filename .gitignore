@@ -2,8 +2,13 @@
 media - Copy.sqlite
 popcorn.db
 popcorn.sql
+Views/images/movie/*
+Views/images/tv/*
+Views/logs/*
 Views/.idea/*
 .idea/*
 Views/media.sqlite
 Viewer/*
 testregex.py
+
+!.gitignore
