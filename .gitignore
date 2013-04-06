@@ -1,0 +1,9 @@
+#Ignore files
+media - Copy.sqlite
+popcorn.db
+popcorn.sql
+Views/.idea/*
+.idea/*
+Views/media.sqlite
+Viewer/*
+testregex.py
