@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="StyleSheet" type="text/css" href="/styles.css"/>
+    <title></title>
+
+    <script type="text/javascript">
+        var selectionFullTitle = null;
+        var selectionSeasons = null;
+        var selectionEpisodeCount = null;
+        var selectionFanart = null;
+        var tempImg = [];
+
+        function init()
+        {
+            selectionFanart = document.getElementById("fanart_img");
+
+            selectionFullTitle = document.getElementById("fullTitle");
+            if(selectionFullTitle != null)
+                selectionFullTitle.appendChild(document.createTextNode(""));
+
+            selectionSeasons = document.getElementById("seasons");
+            if(selectionSeasons != null)
+                selectionSeasons.appendChild(document.createTextNode(""));
+
+            selectionEpisodeCount = document.getElementById("episodeCount");
+            if(selectionEpisodeCount != null)
+                selectionEpisodeCount.appendChild(document.createTextNode(""));
+
+            <%
+                imgSet = set()
+                [content['shows'][x]['fanart'] for x in range(0,len(content['shows'])) if content['shows'][x]['fanart'] not in imgSet and not imgSet.add(content['shows'][x]['fanart'])]
+            %>
+            var preloads = "${','.join(imgSet)}".split(",");
+
+            for(var x=0;x<preloads.length;x++) {
+                tempImg[x] = new Image();
+                tempImg[x].src = "/images/tv/" + preloads[x];
+            }
+        }
+
+        function changeSelection(title,seasons,episodes,fanart)
+        {
+            if(selectionFullTitle != null)
+                selectionFullTitle.firstChild.nodeValue = title;
+
+            if(selectionSeasons != null)
+                selectionSeasons.firstChild.nodeValue = 'Seasons: ' + seasons;
+
+            if(selectionEpisodeCount != null)
+                selectionEpisodeCount.firstChild.nodeValue = 'Episodes: ' + episodes;
+
+            if(selectionFanart != null && fanart != '')
+                selectionFanart.setAttribute("src", "/images/tv/" + fanart);
+            else if((fanart == null || fanart == '') && selectionFanart != null)
+                selectionFanart.setAttribute("src", "/images/tv/tv_fanart.png");
+        }
+
+        function next(page)
+        {
+            if(page < 0) return;
+
+            location.replace("/tv/show?page=" + page + "&${filterUrl}");
+        }
+
+        function prev(page)
+        {
+            if(page < 0) return;
+
+            location.replace("/tv/show?page=" + page + "&${filterUrl}");
+        }
+
+    </script>
+
+</head>
+<body background="/images/background_3.jpg" bgproperties="fixed" onloadset="tvname_0">
+<%namespace file="/filterBar.html" name="filterBar"/>
+<div class="fanframe_fanart">
+    <img src="/images/tv/tv_fanart.png" id="fanart_img" />
+</div>
+<div class="fanframe_overlay">
+    <img src="/images/ClassicFrame_Fanart_small.png" id="fanart_frame" />
+</div>
+
+<table>
+    <tr>
+        <td height="10"></td>
+    </tr>
+    <tr>
+        <!-- image -->
+        <td width="660" valign="top">
+            <table>
+                <tr>
+                    <td height="375"></td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center" width="600">
+                        <span id="fullTitle" class="description"></span>
+                        <br />
+                        <span id="seasons" class="season"></span>
+                        <br />
+                        <span id="episodeCount" class="fulltitle"></span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- NAV -->
+        <td valign="top">
+            ${filterBar.displayNav('tv', 'tvname_0', '', True)}
+        </td>
+
+        <!-- episodes -->
+        <td valign="top">
+            <table >
+                % for x in range(0, len(content["shows"])):
+                <tr>
+                    <td class="watch" align="right" valign="top"></td>
+                    <td><a href="/tv/season?id=${content['shows'][x]['id']}&page=0"
+                           name="tvname_${loop.index}"
+                           class="mainlink"
+                           onfocus="changeSelection('${content['shows'][x]['fulltitle'][:60]|h,x}', '${', '.join(content['shows'][x]['seasons'])}', '${content['shows'][x]['epscount']}', '${content['shows'][x]['fanart']}');"
+                           ONKEYLEFTSET="navHome" ONKEYRIGHTSET="filter_0"
+                        % if loop.last and content['total'] > 0:
+                        ONKEYDOWNSET="PGDWN"
+                        % elif loop.last:
+                        ONKEYDOWNSET="tvname_0"
+                        % else:
+                        ONKEYDOWNSET="tvname_${loop.index+1}"
+                        % endif
+
+                        % if loop.first and content['total'] > 0:
+                        ONKEYUPSET="PGUP"
+                        % elif loop.first:
+                        ONKEYUPSET="tvname_${len(content["shows"])-1}"
+                        % else:
+                        ONKEYUPSET="tvname_${loop.index-1}"
+                        % endif
+                        >
+                        <img src="/images/unwatched.png" border="0" onfocussrc="/images/selected.png" />
+                        </a>
+                    </td>
+                    <td valign="top"><a class="mainlink" href="">${content['shows'][x]['shorttitle']}</a></td>
+                    <td class="lastwatched" valign="top" align="right">${content['shows'][x]['lastadded']}</td>
+                </tr>
+                % endfor
+                <tr>
+                    <td colspan="4" height="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right">
+                        <span class="currentPage">${content['page']+1}</span>
+                        <span class="totalPage"> of ${content['total']+1}</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- filter bar -->
+        <td width="40"></td>
+        <td valign="top">
+            ${filterBar.displayBar(selected, 'tvname_0', '?', '/tv/show')}
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td height="60"></td>
+    </tr>
+    <tr>
+        <!-- descriptions -->
+        <td><div id="details" class="details"></div></td>
+    </tr>
+</table>
+<a href="Javascript:prev(${prev});" onfocus="prev(${prev});" name="PGUP" TVID="PGUP"></a>
+<a href="Javascript:next(${next});" onfocus="next(${next});" name="PGDWN" TVID="PGDN"></a>
+<script type="text/javascript">
+    init();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="StyleSheet" type="text/css" href="/styles.css"/>
+    <title></title>
+
+    <script type="text/javascript">
+        var fanartImg = null;
+        var selectionDesc = null;
+        var selectionDetails = null;
+        var selectionSeason = null;
+        var selectionFullEpisode = null;
+        var tempImg = [];
+
+        function init()
+        {
+            fanartImg = document.getElementById("fanart_img");
+            selectionDesc = document.getElementById("description");
+            if(selectionDesc != null)
+                selectionDesc.appendChild(document.createTextNode(""));
+            selectionDetails = document.getElementById("details");
+            if(selectionDetails != null)
+                selectionDetails.appendChild(document.createTextNode(""));
+
+            selectionSeason = document.getElementById("year");
+            if(selectionSeason != null)
+                selectionSeason.appendChild(document.createTextNode(""));
+
+            selectionFullEpisode = document.getElementById("runtime");
+            if(selectionFullEpisode != null)
+                selectionFullEpisode.appendChild(document.createTextNode(""));
+
+            <%
+                imgSet = set()
+                [movies[x]["fanart"] for x in range(0,len(movies)) if movies[x]["fanart"] not in imgSet and not imgSet.add(movies[x]["fanart"])]
+            %>
+            var preloads = "${','.join(imgSet)}".split(",");
+
+            for(var x=0;x<preloads.length;x++) {
+                tempImg[x] = new Image();
+                tempImg[x].src = "/images/movie/" + preloads[x];
+            }
+        }
+
+        function changeSelection(fanart,title,desc,runtime,year)
+        {
+            if(fanartImg != null && fanart != '')
+                fanartImg.setAttribute("src", "/images/movie/" + fanart);
+            else if((fanart == null || fanart == '') && fanartImg != null)
+                fanartImg.setAttribute("src", "/images/movie/movie_fanart.png");
+
+            if(selectionDesc != null)
+                selectionDesc.firstChild.nodeValue = title;
+
+            if(selectionDetails != null)
+                selectionDetails.firstChild.nodeValue = desc;
+
+            if(selectionFullEpisode != null)
+                selectionFullEpisode.firstChild.nodeValue = runtime;
+
+            if(selectionSeason != null)
+                selectionSeason.firstChild.nodeValue = year;
+        }
+
+        function selectedMedia(id)
+        {
+            var expiredTime = new Date(); //expires in 1 minute (60000 miliseconds)
+            location.replace("/movies/${pageName}?id=" + id + "&page=${page}&play=true&${filterUrl}&date=" + escape(expiredTime.toUTCString()));
+        }
+
+        function next(page)
+        {
+            if(page < 0) return;
+
+            location.replace("/movies/${pageName}?page=" + page + "&${filterUrl}");
+        }
+
+        function prev(page)
+        {
+            if(page < 0) return;
+
+            location.replace("/movies/${pageName}?dir=prev&page=" + page + "&${filterUrl}");
+        }
+
+    </script>
+
+</head>
+<body background="/images/background_3.jpg" bgproperties="fixed"
+      onloadset="${startOn}">
+<%namespace file="/filterBar.html" name="filterBar"/>
+
+<table>
+    <tr>
+        <td height="10"></td>
+    </tr>
+    <tr>
+        <!-- image -->
+        <td width="660" valign="top">
+            <table>
+                <tr>
+                    <td height="375"></td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center" width="600">
+                        <span id="description" class="description"></span>
+                        <br>
+                        <span id="year" class="season"></span>
+                        <br>
+                        <span id="runtime" class="fulltitle"></span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- NAV -->
+        <td valign="top">
+            ${filterBar.displayNav('movie', 'moviename_0', '/movies/' + pageName, True)}
+        </td>
+
+        <!-- movies -->
+        <td valign="top">
+            <table >
+                % for movie in movies:
+                <tr>
+                    <td class="watch" align="right" valign="top"></td>
+                    <td><a href="Javascript:;" name="moviename_${loop.index}" class="mainlink"
+                           onfocus="changeSelection('${movie['fanart']}', '${movie['fulltitle'].replace('\'', '')}', '${movie['desc']|h,x}', '${movie['runtime']}', '${movie['year']}');"
+                           onclick="selectedMedia(${movie['id']});"
+                           ONKEYDOWNSET="${'moviename_' + str(loop.index+1) if not loop.last else 'PGDWN'}"
+                           ONKEYUPSET="${'moviename_' + str(loop.index-1) if not loop.first else 'PGUP'}"
+                           ONKEYLEFTSET="navHome" ONKEYRIGHTSET="filter_0">
+                        <img src="${movie['watchedicon']}" border="0" onfocussrc="/images/selected.png" id="${movie['id']}" />
+                    </a></td>
+                    <td valign="top">
+                        <a vod class="mainlink" name="movieid_${movie['id']}" id="id_${movie['id']}" href="${movie['path'].replace('\\','/')}"
+                           ONKEYLEFTSET="moviename_${loop.index}" ONKEYRIGHTSET="filter_0"
+                        % if loop.last and totalPages > 0:
+                        ONKEYDOWNSET="PGDWN"
+                        % elif loop.last:
+                        ONKEYDOWNSET="moviename_0"
+                        % else:
+                        ONKEYDOWNSET="moviename_${loop.index+1}"
+                        % endif
+
+                        % if loop.first and totalPages > 0:
+                        ONKEYUPSET="PGUP"
+                        % elif loop.first:
+                        ONKEYUPSET="moviename_${len(movies)-1}"
+                        % else:
+                        ONKEYUPSET="moviename_${loop.index-1}"
+                        % endif
+
+                        % if play == 'true' and int(id) == int(movie['id']):
+                            ONFOCUSLOAD
+                        % endif
+                        >
+                        ${movie['title']}
+                        </a>
+                    </td>
+                    <td class="lastwatched" valign="top" align="right">${movie['watcheddate']}</td>
+                </tr>
+                % endfor
+                <tr>
+                    <td colspan="4" height="20"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right">
+                        <span class="currentPage">${page+1}</span>
+                        <span class="totalPage"> of ${totalPages+1}</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- filter bar -->
+        <td width="40"></td>
+        <td valign="top">
+            ${filterBar.displayBar(selected, 'moviename_0', '?', '/movies/' + pageName)}
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td height="60"></td>
+    </tr>
+    <tr>
+        <!-- descriptions -->
+        <td><div id="details" class="details"></div></td>
+    </tr>
+</table>
+
+<div class="fanframe_fanart_movie">
+    <img src="" id="fanart_img" /> <!-- 228x342 -->
+</div>
+<div class="fanframe_overlay_movie">
+    <img src="/images/ClassicFrame_Poster_small.png" id="fanart_frame" />
+</div>
+
+<a href="Javascript:prev(${prevPage});" onfocus="prev(${prevPage});" name="PGUP" TVID="PGUP"></a>
+<a href="Javascript:next(${nextPage});" onfocus="next(${nextPage});" name="PGDWN" TVID="PGDN"></a>
+
+<script type="text/javascript">
+    init();
+</script>
+
+</body>
+</html>

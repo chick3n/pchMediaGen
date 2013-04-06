@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+${msg}
+<script type="text/javascript">
+    % if redirect:
+        var countdown;
+        var countdown_number = 30;
+
+        function countdown_trigger() {
+            if(countdown_number > 0) {
+                countdown_number--;
+                document.getElementById('countdown').firstChild.nodeValue = countdown_number + ' seconds.';
+                if(countdown_number > 0) {
+                    countdown = setTimeout('countdown_trigger()', 1000);
+                }
+            }
+        }
+
+        function countdown_clear() {
+            clearTimeout(countdown);
+        }
+
+        function reload(url)
+        {
+            location.replace(url);
+        }
+
+        //setTimeout('reload(\'${redirect}\')', '30000');
+        countdown_trigger();
+    % endif
+</script>
+</body>
+</html>

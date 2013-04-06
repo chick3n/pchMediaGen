@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="StyleSheet" type="text/css" href="/styles.css"/>
+    <title></title>
+
+    <script type="text/javascript">
+        var maindata_title;
+        var maindata1_title, maindata1_content;
+        var maindata2_title, maindata2_content;
+        var maindata3_title, maindata3_content;
+        var maindata4_title, maindata4_content;
+        var maindata5_title, maindata5_content;
+        var maindata_desc;
+
+        var current_bottom_view = null;
+
+        var latest = new Array();
+        latest[0] = new Array(
+                % for show, title, url, desc, fanart, season, added, showsmall, fullshow, watchedicon, watcheddate, id, fulltitle in episodes:
+                    ${',' if loop.index > 0 else ''} new Array("${show}", "${title[:25]}", "${id}", "${desc|h,x}")
+                % endfor
+        );
+        latest[1] = new Array(
+                % for movie in movies:
+                    ${',' if loop.index > 0 else ''} new Array("", "${movie['title'][:25]}", "${movie['id']}", "${movie['desc']|h,x}")
+                % endfor
+        );
+        latest[2] = new Array(
+                new Array("", "Refresh Page", "Javascript:location.replace('/index?refresh=true');", "")
+                , new Array("", "Parse Media", "#", "Execute the scrapping jobs manually.")
+                , new Array("", "Restart Website", "Javascript:location.replace('/rebootPy');", "Restart the cherryPy service.")
+                , new Array("", "Shutdown Website", "Javascript:location.replace('/shutdownPy');", "Shutdown the cherryPy service.")
+
+        );
+
+        var domObjects = null;
+        var keyObjects = new Array( //up/down/left/right
+                new Array("tvshows", "", "system", "movies")
+                , new Array("movies", "", "tvshows", "system")
+                , new Array("system", "", "movies", "tvshows")
+        )
+
+        function bind()
+        {
+            maindata_title = document.getElementById('maindata_title');
+            maindata1_title = document.getElementById('maindata1_title');
+            maindata1_content = document.getElementById('maindata1_content');
+            maindata2_title = document.getElementById('maindata2_title');
+            maindata2_content = document.getElementById('maindata2_content');
+            maindata3_title = document.getElementById('maindata3_title');
+            maindata3_content = document.getElementById('maindata3_content');
+            maindata4_title = document.getElementById('maindata4_title');
+            maindata4_content = document.getElementById('maindata4_content');
+            maindata5_title = document.getElementById('maindata5_title');
+            maindata5_content = document.getElementById('maindata5_content');
+
+            maindata_desc = document.getElementById('maindata_desc');
+
+            domObjects = new Array(
+                    new Array(maindata1_title, maindata1_content)
+                    , new Array(maindata2_title, maindata2_content)
+                    , new Array(maindata3_title, maindata3_content)
+                    , new Array(maindata4_title, maindata4_content)
+                    , new Array(maindata5_title, maindata5_content)
+            );
+
+            maindata_title.appendChild(document.createTextNode(""));
+            maindata_desc.appendChild(document.createTextNode(""));
+
+            for(x=0; x<domObjects.length; x++)
+            {
+                domObjects[x][0].appendChild(document.createTextNode(""));
+                domObjects[x][1].appendChild(document.createTextNode(""));
+            }
+        }
+
+        function clear()
+        {
+            maindata_title.firstChild.nodeValue = "";
+            maindata_desc.firstChild.nodeValue = "";
+
+            for(x=0; x<domObjects.length; x++)
+            {
+                domObjects[x][0].firstChild.nodeValue = "";
+                domObjects[x][1].firstChild.nodeValue = "";
+
+                domObjects[x][1].setAttribute('href', '');
+                domObjects[x][1].setAttribute('INDEX', '');
+                domObjects[x][1].setAttribute('ITEM', '');
+            }
+        }
+
+        function get_media_name(val)
+        {
+            switch(val)
+            {
+                case 0: return "mediadata1";
+                case 1: return "mediadata2";
+                case 2: return "mediadata3";
+                case 3: return "mediadata4";
+                case 4: return "mediadata5";
+            }
+
+            return "mediadata1";
+        }
+
+        function get_index_name(val)
+        {
+            switch(val)
+            {
+                case 0: return "tvshows";
+                case 1: return "movies";
+                case 2: return "system";
+            }
+
+            return "tvshows";
+        }
+
+        function show(x)
+        {
+            if(current_bottom_view == x)
+                return;
+
+            current_bottom_view = x;
+
+            clear();
+            if(x == 0) //tv
+            {
+                maindata_title.firstChild.nodeValue = "Latest TV Shows Added";
+            }
+            else if(x == 1) // Movies
+            {
+                maindata_title.firstChild.nodeValue = "Latest Movies Added";
+            }
+            else if(x == 2) //system
+            {
+                maindata_title.firstChild.nodeValue = "System Options";
+            }
+
+            for(var i=0; i<latest[x].length; i+=1)
+            {
+
+                var data = latest[x][i];
+
+                if(data[1].length > 30)
+                    data[1] = data[1].substr(0, 30) + '...';
+
+                domObjects[i][0].firstChild.nodeValue = data[0];
+                domObjects[i][1].firstChild.nodeValue = data[1];
+                var expiredTime = new Date();
+                if(x == 0)
+                    domObjects[i][1].setAttribute('href', '/tv/episode?id=' + data[2] + '&page=0&play=true&date=' + escape(expiredTime.toUTCString()));
+                else if(x == 1)
+                    domObjects[i][1].setAttribute('href', '/movies/movie?id=' + data[2] + '&page=0&play=true&date=' + escape(expiredTime.toUTCString()));
+                else
+                    domObjects[i][1].setAttribute('href', data[2]);
+                domObjects[i][1].setAttribute('ONKEYRIGHTSET', keyObjects[x][3]);
+                domObjects[i][1].setAttribute('ONKEYLEFTSET', keyObjects[x][2]);
+                domObjects[i][1].setAttribute('INDEX', x);
+                domObjects[i][1].setAttribute('ITEM', i);
+
+                if(i == 0)
+                {
+                    domObjects[i][1].setAttribute('ONKEYDOWNSET', get_media_name(i+1));
+                    domObjects[i][1].setAttribute('ONKEYUPSET', get_index_name(x));
+                }
+                else if(i+1 < latest[x].length)
+                {
+                    domObjects[i][1].setAttribute('ONKEYDOWNSET', get_media_name(i+1));
+                    domObjects[i][1].setAttribute('ONKEYUPSET', get_media_name(i-1));
+                }
+                else
+                {
+                    domObjects[i][1].setAttribute('ONKEYDOWNSET', 'mediadata1');
+                    domObjects[i][1].setAttribute('ONKEYUPSET', get_media_name(i-1));
+                }
+
+                //domObjects[i][1].onfocus = function() { alert("sss"); }
+
+                if(i==0)
+                {
+                    maindata_desc.firstChild.nodeValue = data[3];
+                    //maindata1_content.focus();
+                }
+
+            }
+        }
+
+        function hide(x)
+        {
+            clear();
+        }
+
+        function show_desc(obj)
+        {
+            var ele = domObjects[obj-1][1];
+            var x = ele.getAttribute("INDEX");
+            var y = ele.getAttribute("ITEM");
+            var desc = latest[x][y][3];
+
+            maindata_desc.firstChild.nodeValue = desc;
+        }
+    </script>
+</head>
+<body background="/images/background_3.jpg" bgproperties="fixed" onloadset="tvshows">
+
+<table align="center" width="80%">
+
+    <tr>
+        <!-- TV -->
+        <td width="26%" align="center">
+            <img src="/images/tvshows.png" />
+        </td>
+
+        <!-- Movies -->
+        <td width="26%" align="center">
+            <img src="/images/movies.png" />
+        </td>
+
+        <!-- System -->
+        <td align="center" width="26%">
+            <img src="/images/shutdown.png" />
+        </td>
+    </tr>
+
+    <tr>
+
+        <td align="center">
+            <a href="/tv/show" class="mainpage" onfocus="show(0);" id="firstlink" name="tvshows" ONKEYRIGHTSET="movies" ONKEYLEFTSET="system" ONKEYDOWNSET="addedtvshows">
+                TV SHOWS
+            </a>
+            <br />
+            <a href="/tv/added" class="mainpagesmall" onfocus="show(0);" id="addedlink" name="addedtvshows" ONKEYRIGHTSET="unwatchedtvshows" ONKEYLEFTSET="system" ONKEYDOWNSET="mediadata1" ONKEYUPSET="tvshows">
+                new
+            </a>
+            &nbsp;<span class="white small">-</span>&nbsp;
+            <a href="/tv/watchme" class="mainpagesmall" onfocus="show(0);" id="unwatchedlink" name="unwatchedtvshows" ONKEYRIGHTSET="movies" ONKEYLEFTSET="addedtvshows" ONKEYDOWNSET="mediadata1" ONKEYUPSET="tvshows">
+                not seen
+            </a>
+        </td>
+
+        <td align="center">
+            <a href="/movies/movie" class="mainpage" onfocus="show(1);" name="movies" ONKEYRIGHTSET="system" ONKEYLEFTSET="tvshows" ONKEYDOWNSET="addedmovies">
+                MOVIES
+            </a>
+            <br />
+            <a href="/movies/added" class="mainpagesmall" onfocus="show(1);" id="moviesaddedlink" name="addedmovies" ONKEYRIGHTSET="system" ONKEYLEFTSET="tvshows" ONKEYDOWNSET="mediadata1" ONKEYUPSET="movies">
+                new
+            </a>
+        </td>
+
+        <td align="center">
+            <a href="#" class="mainpage" onfocus="show(2);" name="system" ONKEYRIGHTSET="tvshows" ONKEYLEFTSET="movies" ONKEYDOWNSET="mediadata1">
+                SYSTEM
+            </a>
+        </td>
+
+    </tr>
+
+</table>
+
+<table class="maindata">
+    <tr><td height="6"></td></tr>
+    <tr><th colspan="4" class="maindata" id="maindata_title"></th></tr>
+    <tr>
+        <td align="left" valign="top" width="20"></td>
+        <td align="left" class="mainextra" id="maindata1_title" width="100"></td>
+        <td align="left" width="250" style="padding-left:10px"><a href="" onfocus="show_desc(1)" class="mainlink" id="maindata1_content" name="mediadata1"></a></td>
+        <td width="20"></td>
+        <td rowspan="5" valign="top" class="maindesc" id="maindata_desc"></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" width=20></td>
+        <td align="left" class="mainextra" id="maindata2_title"></td>
+        <td align="left" style="padding-left:10px"><a href="" onfocus="show_desc(2)" class="mainlink" id="maindata2_content" name="mediadata2"></a></td>
+        <td width="20"></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" width=20></td>
+        <td align="left" class="mainextra" id="maindata3_title"></td>
+        <td align="left" style="padding-left:10px"><a href="" onfocus="show_desc(3)" class="mainlink" id="maindata3_content" name="mediadata3"></a></td>
+        <td width="20"></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" width=20></td>
+        <td align="left" class="mainextra" id="maindata4_title"></td>
+        <td align="left" style="padding-left:10px"><a href="" onfocus="show_desc(4)" class="mainlink" id="maindata4_content" name="mediadata4"></a></td>
+        <td width="20"></td>
+    </tr>
+    <tr>
+        <td align="left" valign="top" width=20></td>
+        <td align="left" class="mainextra" id="maindata5_title"></td>
+        <td align="left" style="padding-left:10px"><a href="" onfocus="show_desc(5)" class="mainlink" id="maindata5_content" name="mediadata5"></a></td>
+        <td width="20"></td>
+    </tr>
+</table>
+
+<script type="text/javascript" defer="defer">
+    bind();
+    //document.getElementById("firstlink").focus()
+</script>
+
+</body>
+</html>

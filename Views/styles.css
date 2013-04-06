@@ -1,0 +1,44 @@
+body { font-family: sans-serif; color: #ffffff }
+
+a.mainpage { text-decoration: none; white-space: nowrap; color: #ffffff; font-family: sans-serif; }
+a.mainpage:hover { text-decoration: none; white-space: nowrap; color: #f8cd22; font-family: sans-serif; }
+a.mainpage:active { text-decoration: none; white-space: nowrap; color: #f8cd22; font-family: sans-serif; }
+
+a.mainpagesmall { font-size: 12px; text-decoration: none; white-space: nowrap; color: #ffffff; font-family: sans-serif; }
+a.mainpagesmall:hover { text-decoration: none; white-space: nowrap; color: #f8cd22; font-family: sans-serif; }
+a.mainpagesmall:active { text-decoration: none; white-space: nowrap; color: #f8cd22; font-family: sans-serif; }
+
+.selected { text-decoration: none; white-space: nowrap; color: #f8cd22; font-family: sans-serif; }
+
+a.mainlink { text-decoration: none; white-space: nowrap; color: #ffffff;  }
+a.mainlink:hover { text-decoration: underline; white-space: nowrap; color: #f8cd22;  }
+a.mainlink:active { text-decoration: underline; white-space: nowrap; color: #f8cd22;  }
+
+table.maindata { text-align: left; color: #C6A006; }
+td.maindesc { color: #C5B5B5; }
+td.mainextra { color: #f8cd22; text-align: right; }
+td.suboptions { padding-top: 0; }
+
+th.maindata { font-weight: normal; font-size: 12px; }
+
+div.fanframe_overlay { position: absolute; top: 20px; left: 20px; }
+div.fanframe_fanart { position: absolute; top: 29px; left: 29px; }
+div.fanframe_overlay_movie { position: absolute; top: 20px; left: 190px; }
+div.fanframe_fanart_movie { position: absolute; top: 29px; left: 199px; }
+div.disc_frame { position: absolute; top: 390px; left: 20px; width: 608px; text-align: center; }
+div.details_frame { position: absolute; top: 425px; left: 30px; width: 610px; text-align: left; }
+table.title_content { position: absolute; top: 20px; left: 700px; }
+div.filterBar { position: absolute; top: 10px; left: 1000px; }
+
+td.watch { color: #C6A006; text-align: right; }
+td.lastwatched { color: #C6A006; text-align: right; padding-left: 20px; }
+span.description { color: #ffffff; font-weight: bold; font-size: 20px; }
+span.season { color: #C6A006; font-weight: normal; font-size: 20px; }
+span.fulltitle { color: #ffffff; font-weight: normal; font-size: 20px; }
+div.details { color: #C5B5B5; font-weight: normal; font-size: 16px; }
+span.totalPage { color: #ffffff; font-weight: bold; font-size: 14px; }
+span.currentPage { color: #C6A006; font-weight: bold; font-size: 14px; }
+
+.white { color: #ffffff; }
+.small { font-size: 12px; text-decoration: none; font-family: sans-serif; }
+

@@ -1,0 +1,48 @@
+<%def name="displayBar(selected = None, go_back = None, URLPrefix = '?', page='')">
+    <%
+    import string
+
+    if go_back is None:
+        go_back = ""
+    %>
+    <script type="text/javascript">
+        function filter(url)
+        {
+            location.replace('${page}' + url);
+        }
+    </script>
+    % if filterLetters:
+        % for letter in filterLetters:
+            <a href="Javascript:filter('${URLPrefix}f=s:${(letter if letter != '#' else 'Other') if selected != letter else ''}')"
+               class="${'mainpage' if selected != letter else 'selected'} small" name="filter_${loop.index}"
+               ONKEYDOWNSET="filter_${loop.index + 1 if not loop.last else '0'}"
+               ONKEYUPSET="filter_${loop.index-1 if not loop.first else len(filterLetters)-1}"
+               ONKEYLEFTSET="${go_back}" ONKEYRIGHTSET="navHome">${letter}</a><br>
+        % endfor
+    % endif
+</%def>
+
+<%def name="displayNav(selected = None, go_back = None, page='', hasFilter = False)">
+    <script type="text/javascript">
+        function filterNav(url)
+        {
+            location.replace(url);
+        }
+    </script>
+
+    <a href="Javascript:filterNav('/index');" class="${'mainpage' if selected != 'home' else 'selected'}"
+       name="navHome" ONKEYUPSET="${'navTvAdded' if selected == 'tv' else 'navMovieAdded'}" ONKEYDOWNSET="navMovie" ONKEYRIGHTSET="${go_back}" ONKEYLEFTSET="${go_back if not hasFilter else 'filter_0'}">H</a><br>
+    <a href="Javascript:filterNav('/movies/movie');" class="${'mainpage' if selected != 'movie' else 'selected'}"
+       name="navMovie" ONKEYUPSET="navHome" ONKEYDOWNSET="navTv" ONKEYRIGHTSET="${go_back}" ONKEYLEFTSET="${go_back if not hasFilter else 'filter_0'}">M</a><br>
+    <a href="Javascript:filterNav('/tv/show');" class="${'mainpage' if selected != 'tv' else 'selected'}"
+       name="navTv" ONKEYUPSET="navMovie" ONKEYDOWNSET="${'navTvAdded' if selected == 'tv' else 'navMovieAdded'}" ONKEYRIGHTSET="${go_back}" ONKEYLEFTSET="${go_back if not hasFilter else 'filter_0'}">T</a><br>
+    % if selected == 'movie':
+        <br>
+        <a href="Javascript:filterNav('/movies/added');" class="mainpage" name="navMovieAdded" ONKEYUPSET="navTv" ONKEYDOWNSET="navHome"
+           ONKEYRIGHTSET="${go_back}" ONKEYLEFTSET="${go_back if not hasFilter else 'filter_0'}">A</a>
+    % elif selected == 'tv':
+        <br>
+        <a href="Javascript:filterNav('/tv/added');" class="mainpage" name="navTvAdded" ONKEYUPSET="navTv" ONKEYDOWNSET="navHome"
+           ONKEYRIGHTSET="${go_back}" ONKEYLEFTSET="${go_back if not hasFilter else 'filter_0'}">A</a>
+    % endif
+</%def>
