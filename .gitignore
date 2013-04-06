@@ -9,5 +9,6 @@ Views/.idea/*
 Views/media.sqlite
 Viewer/*
 testregex.py
+*.pyc
 
 !.gitignore
