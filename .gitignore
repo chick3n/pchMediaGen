@@ -10,5 +10,6 @@ Views/media.sqlite
 Viewer/*
 testregex.py
 *.pyc
+SampleCherry/*
 
 !.gitignore
