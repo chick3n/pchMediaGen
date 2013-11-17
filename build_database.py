@@ -84,42 +84,45 @@ def populateDBMovie(locations, type):
         location = location.replace('/', os.path.sep)
         insertList = []
         for dirname in os.listdir(location):
-            cur.execute("select count(movie.id) from movie where parent_dir = ?", (dirname,))
-            if cur.fetchone()[0] == 1:
-                continue
-            for path, dirs, filenames in os.walk(os.path.join(location, dirname)):
+            try:
+                cur.execute("select count(movie.id) from movie where parent_dir = ?", (dirname,))
+                if cur.fetchone()[0] == 1:
+                    continue
+                for path, dirs, filenames in os.walk(os.path.join(location, dirname)):
 
-                if path.replace(location, "").count(os.path.sep) > level:
-                    del dirs[:]
+                    if path.replace(location, "").count(os.path.sep) > level:
+                        del dirs[:]
 
-                filenames = [f for f in filenames if re.match(includes, f.lower())]
-                filenames = [f for f in filenames if not re.match(excludes, f.lower())]
+                    filenames = [f for f in filenames if re.match(includes, f.lower())]
+                    filenames = [f for f in filenames if not re.match(excludes, f.lower())]
 
-                no_root_path = path.replace(location, "")
+                    no_root_path = path.replace(location, "")
 
-                for filename in filenames:
-                    full_path = os.path.join(path, filename)
-                    blank_path = os.path.join(no_root_path, filename)
-                    #check if fullpath + filename exists, than ignore otherwise
-                    cur.execute("select count(movie.id) from movie where full_path = ?", (blank_path,))
-                    if cur.fetchone()[0] == 1:
-                        continue
+                    for filename in filenames:
+                        full_path = os.path.join(path, filename)
+                        blank_path = os.path.join(no_root_path, filename)
+                        #check if fullpath + filename exists, than ignore otherwise
+                        cur.execute("select count(movie.id) from movie where full_path = ?", (blank_path,))
+                        if cur.fetchone()[0] == 1:
+                            continue
 
-                    folder = None
-                    folderList = path.rsplit(os.path.sep, 1)
-                    if len(folderList) > 1:
-                        folder = folderList[1]
+                        folder = None
+                        folderList = path.rsplit(os.path.sep, 1)
+                        if len(folderList) > 1:
+                            folder = folderList[1]
 
-                    added = datetime.datetime.fromtimestamp(os.path.getmtime(full_path))
-                    #look for nfo first
+                        added = datetime.datetime.fromtimestamp(os.path.getmtime(full_path))
+                        #look for nfo first
 
-                    insertList.append((blank_path
-                                       , filename
-                                       , dirname
-                                       , folder
-                                       , added
-                        ))
-
+                        insertList.append((blank_path
+                                           , filename
+                                           , dirname
+                                           , folder
+                                           , added
+                            ))
+            except Exception, e:
+                logger.error(str(e))
+                continue;
         if len(insertList) > 0:
             logger.info('Movies', "Indexed Movies:\n%s", ','.join([x[2] for x in insertList]))
             cur.executemany('insert into movie (full_path, file_name, parent_dir, sub_dir, added) VALUES (?,?,?,?, ?)'
