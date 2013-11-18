@@ -520,14 +520,15 @@ class Content(object):
                 (select
                    episode.id, episode.title, episode.added,
                    show.title as extraTitle,
-                   'tv' as type
+                   'tv' as type,
+                   episode.file_name
                 from episode
                 inner join show on show.id = episode.show
 
                 union all
 
                 select
-                   movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type
+                   movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type, movie.file_name
                 from movie)
                 order by %s %s limit ?, ? """ % ('added' if order == 'date' else 'title',
                                                  'desc' if direction == 'desc' else 'asc')
@@ -539,7 +540,137 @@ class Content(object):
         for media in mediaContent:
             content = {}
             content['id'] = media[0]
-            content['title'] = media[1] if media[1] is not None else ""
+            content['title'] = media[1] if media[1] is not None else media[5]
+            content['dayssince'] = self.convert_watched_to_dayssince(media[2])
+            content['added'] = media[2]
+            content['extra'] = media[3] if media[3] is not None else ""
+            content['type'] = media[4]
+            results.append(content)
+
+        return results
+
+    #returns only the shows
+    def get_all_tv_content(self, page=0, limit=50, direction='desc'):
+        sql = """select show.id, show.title, 'show' as type
+                from show
+                order by show.title %s limit ?, ? """ % ('desc' if direction == 'desc' else 'asc',)
+
+        mediaContent = self.sql.select(sql, (page * limit, limit,))
+
+        results = []
+
+        for media in mediaContent:
+            content = {}
+            content['id'] = media[0]
+            content['title'] = media[1] if media[1] is not None else "Unknown Show"
+            content['dayssince'] = None
+            content['added'] = None
+            content['extra'] = None
+            content['type'] = media[2]
+            results.append(content)
+
+        return results
+
+    #return the all seasons for a show
+    def get_tv_seasons(self, media_id):
+        sql = """select distinct episode.season
+                from episode
+                inner join show on show.id = episode.show
+                where show.id = ?
+                order by episode.season asc
+                """
+
+        media_content = self.sql.select(sql, (media_id,))
+
+        results = {'seasons': [], 'fanart': None, 'show': media_id}
+        for media in media_content:
+            results['seasons'].append(media[0])
+
+        return results
+
+    #return the latest added episodes for a show and/or season
+    def get_episode_latest(self, show, season=0, limit=1):
+        sql = """select episode.title, episode.file_name, episode.id, episode.added, episode.season, episode.episode
+                from episode
+                where episode.show = ?"""
+
+        if season > 0:
+            sql += " episode.season = ?"
+
+        sql += "order by added desc limit 0,?"
+
+        if season > 0:
+            medias = self.sql.select(sql, (show, season, limit,))
+        else:
+            medias = self.sql.select(sql, (show, limit,))
+
+        results = []
+        for media in medias:
+            content = {'title': media[0] if media[0] is not None else media[1],
+                       'file_name': media[1],
+                       'id': media[2],
+                       'added': self.convert_date_to_dayssince(media[3])}
+            show_episode = ''
+            if media[4] is not None:
+                show_episode += str(media[4])
+            else:
+                show_episode += '?'
+
+            if media[5] is not None:
+                show_episode += 'x' + str(media[5])
+            else:
+                show_episode += 'x??'
+            content['episode'] = show_episode
+
+            results.append(content)
+
+        return results
+
+    #return just the episodes related to the season and show id
+    def get_episodes(self, show=0, season=0, page=0, limit=50, direction='desc'):
+        sql = """select
+                   episode.id, episode.title, episode.added,
+                   show.title as extraTitle,
+                   'tv' as type,
+                   episode.file_name
+                from episode
+                inner join show on show.id = episode.show
+                where episode.season = ? AND show.id = ?
+                order by episode.episode %s
+                limit ?, ?""" % (direction,)
+
+        mediaContent = self.sql.select(sql, (season, show, page * limit, limit,))
+
+        results = []
+
+        for media in mediaContent:
+            content = {}
+            content['id'] = media[0]
+            content['title'] = media[1] if media[1] is not None else media[5]
+            content['dayssince'] = self.convert_watched_to_dayssince(media[2])
+            content['added'] = media[2]
+            content['extra'] = media[3] if media[3] is not None else ""
+            content['type'] = media[4]
+            results.append(content)
+
+        return results
+
+    def get_all_movie_content(self, page=0, limit=50, order='date', direction='desc'):
+        sql = """select
+                   movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type,
+                   movie.file_name
+                from movie
+                order by %s %s limit ?, ? """ % ('added' if order == 'date' else 'title',
+                                                 'desc' if direction == 'desc' else 'asc')
+
+        mediaContent = self.sql.select(sql, (page * limit, limit,))
+
+        results = []
+
+        for media in mediaContent:
+            content = {}
+            content['id'] = media[0]
+            content['title'] = media[1] if media[1] is not None else media[5]
             content['dayssince'] = self.convert_watched_to_dayssince(media[2])
             content['added'] = media[2]
             content['extra'] = media[3] if media[3] is not None else ""
@@ -562,11 +693,8 @@ class Content(object):
             content["id"] = movie[6]
             content["title"] = movie[0] if movie[0] is not None else movie[4]
             content["desc"] = movie[1] if not movie[1] is None else ""
-            content["path"] = "file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/mediaui/Movies/%s" % (movie[3])
             content["fanart"] = "/images/movie/" + movie[9] if movie[9] is not None else None
             content["added"] = self.convert_date_to_dayssince(movie[5])
-            content["watchedicon"] = "/images/unwatched.png" if movie[7] is None else "/images/watched.png"
-            content["watcheddate"] = self.convert_watched_to_dayssince(movie[7])
             content["fulltitle"] = content["title"]
             content["runtime"] = self.convert_runtime_seconds(movie[8])
             content["released"] = self.strip_year_from_date(movie[2])
@@ -582,3 +710,48 @@ class Content(object):
             return content
 
         return None
+
+    def get_tv(self, mediaid):
+        sql = """
+                    SELECT e.id, e.title, e.episode, e.season, e.description, e.airdate, e.file_name,
+                    s.title, s.fanart
+                    FROM episode e
+                    INNER JOIN show s on s.id = e.show
+                    WHERE e.id = ?
+                """
+
+        shows = self.sql.select(sql, (mediaid,))
+
+        content = {}
+        for show in shows:
+            content["id"] = show[0]
+            content["title"] = show[1] if show[1] is not None else show[6]
+            content["desc"] = show[4] if not show[4] is None else ""
+            content["fanart"] = "/images/tv/" + show[8] if show[8] is not None else None
+            content["added"] = self.convert_date_to_dayssince(show[5])
+            content["fulltitle"] = content["title"]
+            content["runtime"] = None
+            content["released"] = self.strip_year_from_date(show[5])
+            content["filename"] = show[6]
+            content["imdb"] = None
+
+            show_episode = ''
+            if show[3] is not None:
+                show_episode += str(show[3])
+            else:
+                show_episode += '?'
+
+            if show[2] is not None:
+                show_episode += 'x' + str(show[2])
+            else:
+                show_episode += 'x??'
+
+            content["episode"] = show_episode
+
+            if content["desc"].__len__() > 300:
+                content["desc"] = content["desc"][:300] + "..."
+
+            if content["title"].__len__() > 30:
+                content["title"] = content["title"][:30] + "..."
+
+        return content

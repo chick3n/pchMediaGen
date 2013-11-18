@@ -14,17 +14,27 @@
             <div class="pb-c  pb-l">Released</div>
             <div class="pb-c  pb-d">${media['released']}</div>
         </div>
-        <div class="pb-r ">
-            <div class="pb-c  pb-l">Runtime</div>
-            <div class="pb-c  pb-d">${media['runtime']}</div>
-        </div>
+        % if media['runtime'] is not None:
+            <div class="pb-r ">
+                <div class="pb-c  pb-l">Runtime</div>
+                <div class="pb-c  pb-d">${media['runtime']}</div>
+            </div>
+        % endif
+        % if media.has_key('episode') and media['episode'] is not None:
+            <div class="pb-r ">
+                <div class="pb-c  pb-l">Episode</div>
+                <div class="pb-c  pb-d">${media['episode']}</div>
+            </div>
+        % endif
         <div class="pb-r ">
             <div class="pb-c  pb-l">Plot</div>
             <div class="pb-c  pb-d">${media['desc']}</div>
         </div>
         <div class="pb-r ">
             <div class="pb-c  pb-l pb-e">Links</div>
-            <div class="pb-c  pb-d pb-e"><a href="http://www.imdb.com/title/${media['imdb']}" target="_blank">imdb</a></div>
+            % if media['imdb'] is not None:
+                <div class="pb-c  pb-d pb-e"><a href="http://www.imdb.com/title/${media['imdb']}" target="_blank">imdb</a></div>
+            % endif
         </div>
     </div>
 % endif

@@ -19,7 +19,6 @@
         {
             case 'tv': mediaType = 'tv'; break;
             case 'anime': mediaType = 'anime'; break;
-            case 'show': mediaType = 'show'; break;
         }
 
         if($("#" + mediaId).css("display") == "block")
@@ -46,12 +45,10 @@
     % for data in media:
         <div class="mediaBody">
             <div class="media">
-                % if data['dayssince'] is not None:
-                    <div class="pc date">${data['dayssince']}</div>
-                % endif
+                <div class="pc date">${data['dayssince']}</div>
                 <div class="pc type">
                     <span class="c-5 c-7">
-                        <a href="#" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a><a href="#" class="c-child">SD</a>
+                        <a href="#" class="c-${data['type']}">${data['type']}</a><a href="#" class="c-child">SD</a>
                     </span>
                 </div>
                 <div class="pc title">
