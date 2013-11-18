@@ -6,7 +6,6 @@ import threading
 import logging
 import datetime
 from logger import logger
-import json
 
 #web
 import Tv
@@ -35,51 +34,32 @@ class MediaUI(object):
             , format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
     @cherrypy.expose
-    def index(self, page = 0, sort = 'date', dir = 'desc'):
-
-        try:
-            current_page = int(page)
-        except:
-            current_page = 0
-
-        #nextPage
-        next_page = "?page=%s&sort=%s&dir=%s" % (str(current_page + 1),
-                                                 'date' if str(sort) == 'date' else 'title',
-                                                 'desc' if str(dir) == 'desc' else 'asc')
-
-        tmpl = lookup.get_template("index.html")
-        return tmpl.render(media=self.content.get_all_media_content(page=current_page, order=sort, direction=dir, limit=50),
-                           nextPage=next_page)
+    def index(self, refresh = None):
+        if refresh:
+            logger.info('index', 'Refresh called, relinking DB thread.')
+            self.content.close()
+            self.content = Content.Content()
+            self.tv.content = self.content
+            self.movies.content = self.content
+        tmpl = lookup.get_template("index.htm")
+        return tmpl.render(episodes=self.content.get_latest_tv_html(0, 5)
+            , movies=self.content.get_movies(0, 5, None, 'm.added DESC'))
 
     @cherrypy.expose
-    def media(self, type, id):
-        data = {'status': 0}
-        tmpl = lookup.get_template("mediaDetails.html")
+    def rebootPy(self):
+        threading.Timer(1, lambda: stopService(restart=True)).start()
+        return Template(filename='templates/exit.html').render(
+            msg="Restarting the web service. <br>Refresh will start in <div id='countdown'>30 seconds.</div>"
+            , redirect='/index')
 
-        try:
-            media_id = int(id)
-        except Exception:
-            return tmpl.render(media=data)
 
-        if type is None:
-            return tmpl.render(media=data)
-
-        if type not in ('movie', 'tv', 'anime',):
-            return tmpl.render(media=data)
-
-        data_content = None
-        if str(type) == 'movie':
-            data_content = self.content.get_movie(media_id)
-
-        if data_content is not None:
-            data.update(data_content)
-            data['status'] = 1
-
-        return tmpl.render(media=data)
+    @cherrypy.expose
+    def shutdownPy(self):
+        threading.Timer(3, lambda: stopService(kill=True)).start()
+        return Template(filename='templates/exit.html').render(msg="Shutting down web service.")
 
     def stop(self):
-        self.content.close()
-        #close db
+        self.content.close() #close db
 
 root = MediaUI()
 

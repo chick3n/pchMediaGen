@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.jscroll.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function ExpandMedia(type, mediaId)
+    {
+        mediaType = 'movie';
+
+        switch(type)
+        {
+            case 'tv': mediaType = 'tv'; break;
+            case 'anime': mediaType = 'anime'; break;
+        }
+
+        if($("#" + mediaId).css("display") == "block")
+        {
+            $("#" + mediaId).css("display", "none");
+            $("#" + mediaId).html("");
+            return;
+        }
+
+        jQuery.ajax({
+            url: '/media?id=' + mediaId + '&type=' + mediaType,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (data){
+                $("#" + mediaId).append(data);
+                $("#" + mediaId).css("display", "block");
+            }
+         });
+    }
+</script>
+
+<div class="contentBody">
+    <div style="clear:both;">
+    % for data in media:
+        <div class="mediaBody">
+            <div class="media">
+                <div class="pc date">${data['dayssince']}</div>
+                <div class="pc type">
+                    <span class="c-5 c-7">
+                        <a href="#" class="c-${data['type']}">${data['type']}</a><a href="#" class="c-child">SD</a>
+                    </span>
+                </div>
+                <div class="pc title">
+                    <span class="groupTitle">
+                        % if data['type'] == 'tv':
+                            <span class="extra">${data['extra']}</span>
+                        % endif
+                        <a href="Javascript:ExpandMedia('${data['type']}',${data['id']});" class="title">${data['title']}</a>
+                    </span>
+                </div>
+            </div>
+            <div class="mediaDetails" id="${data['id']}" style="overflow: hidden;">
+
+            </div>
+        </div>
+    % endfor
+    </div>
+
+    <div class="pagination">
+        <a href="" class="prev">prev</a>
+        <a href="${nextPage}" class="next">next</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.contentBody').jscroll({
+        loadingHtml: '<small>Loading...</small>',
+        padding: 20,
+        nextSelector: 'a.next',
+        contentSelector: 'div.contentBody',
+        pagingSelector: 'div.pagination'
+    });
+</script>
+
+</body>
+</html>
