@@ -13,12 +13,16 @@ import difflib
 from logger import logger
 
 def updateDB(conn, cur, type):
-    if conn is None: return
-    if cur is None: cur = conn.cursor()
+    if conn is None:
+        return None
+    if cur is None:
+        cur = conn.cursor()
+
+    added = []
 
     if type == constants.__TYPE_TV:
         logger.info('MEDIA_INFO', 'TV MEDIA_INFO BEGIN')
-        beginTVParse(cur)
+        added = beginTVParse(cur)
         logger.info('MEDIA_INFO', 'TV MEDIA_INFO END')
 
         logger.info('FANART', 'TV FANART BEGIN')
@@ -26,7 +30,7 @@ def updateDB(conn, cur, type):
         logger.info('FANART', 'TV FANART END')
     elif type == constants.__TYPE_MOVIE:
         logger.info('MEDIA_INFO', 'MOVIE MEDIA_INFO BEGIN')
-        beginMovieParse(cur)
+        added = beginMovieParse(cur)
         logger.info('MEDIA_INFO', 'MOVIE MEDIA_INFO END')
 
         logger.info('FANART', 'MOVIE FANART BEGIN')
@@ -34,7 +38,7 @@ def updateDB(conn, cur, type):
         logger.info('FANART', 'MOVIE FANART END')
 
     conn.commit()
-    return
+    return added
 
 def updateFanartMovie(cur, conn): #posters only for now
     cur.execute("select id, tmdbid, title from movie where poster is null and mediaupdated is null and tmdbid is not null")
@@ -153,6 +157,8 @@ def updateFanartTV(cur):
 
 def beginMovieParse(cur):
     updateList = []
+    returnList = []
+
     updateCount = 100
     updated = datetime.datetime.now().strftime("%Y-%m-%d")
     filterWords = r"(.*)proper|sample|repack|extended(\scut)?|dual audio|unrated|rerip|limited|\bdc\b|uncut"
@@ -242,6 +248,8 @@ def beginMovieParse(cur):
                         , data["id"]
                     ))
 
+                    returnList.append(data["title"])
+
                     logger.info('MEDIA_INFO', 'TMDB scrapped data for \"%s\" @ \"%s\".'
                         , data['title']
                         , parentdir)
@@ -250,10 +258,14 @@ def beginMovieParse(cur):
                         , parentdir
                         , searchTitle
                         , ','.join([x.get_title() for x in movies]))
+
+                    returnList.append(parentdir)
             else:
                 logger.warn('MEDIA_INFO', 'TMDB returned a null object for \"%s\". RAW = %s', searchTitle, parentdir)
+                returnList.append(parentdir)
         else:
             logger.error('beginMovieParse', 'update_database.py', 'We were unable to parse a title out of \"%s\"', parentdir)
+            returnList.append(parentdir)
 
 
         if len(updateList) > 40:
@@ -263,13 +275,11 @@ def beginMovieParse(cur):
     if len(updateList) > 0:
         cur.executemany("update movie set title = ?, year = ?, airdate = ?, tmdbid = ?, imdbid = ?, description = ?, runtime = ?, updated = date('now') WHERE id = ?", updateList)
 
-
-
-
-
+    return returnList
 
 def beginTVParse(cur):
     updateList = []
+    return_list = []
     updateCount = 100
     tvdb = None
     updated = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -313,7 +323,7 @@ def beginTVParse(cur):
 
         if data['season'] is None:
             results = season.match(subdir)
-            if(results is not None):
+            if results is not None:
                 data['season'] = results.group(1)
 
         #TVDB:
@@ -380,6 +390,12 @@ def beginTVParse(cur):
 
         updateList.append((data['show'], data['eps'], data['season'], data['title'], data['desc']
                           , data['aired'], data['year'], data['updated'], data['id']))
+
+        return_list.append("{0} {1}x{2} - {3}".format(parentdir.title(),
+                                                      data['season'],
+                                                      data['eps'],
+                                                      data['title'].encode('utf-8') if not None else filename))
+
         #update db
         if len(updateList) >= updateCount:
             cur.executemany("UPDATE episode SET show=?,episode=?,season=?,title=?,description=?,airdate=?,year=?,updated=? WHERE id=?", updateList)
@@ -388,4 +404,4 @@ def beginTVParse(cur):
     if len(updateList) > 0: #remaining
         cur.executemany("UPDATE episode SET show=?,episode=?,season=?,title=?,description=?,airdate=?,year=?,updated=? WHERE id=?", updateList)
 
-    return
+    return return_list

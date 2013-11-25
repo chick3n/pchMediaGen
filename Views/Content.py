@@ -1,4 +1,5 @@
 import sqlite3 as lite
+import os
 import db
 import re
 from datetime import date, timedelta, datetime
@@ -701,6 +702,10 @@ class Content(object):
             content["filename"] = movie[10]
             content["imdb"] = movie[11]
 
+            if content["fanart"] is not None:
+                if not os.path.exists(content["fanart"]):
+                    content["fanart"] = None
+
             if content["desc"].__len__() > 300:
                 content["desc"] = content["desc"][:300] + "..."
 
@@ -747,6 +752,10 @@ class Content(object):
                 show_episode += 'x??'
 
             content["episode"] = show_episode
+
+            if content["fanart"] is not None:
+                if not os.path.exists(content["fanart"]):
+                    content["fanart"] = None
 
             if content["desc"].__len__() > 300:
                 content["desc"] = content["desc"][:300] + "..."

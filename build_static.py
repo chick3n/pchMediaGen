@@ -16,10 +16,13 @@ import build_database as db
 import sys
 import logging
 from logger import logger
+from pushnotify import exceptions
+from pushnotify import nma
 
 # globals
 movie_locations = []
 tv_locations = []
+notifymyandroid_keys = []
 
 # load settings
 def parseSettings():
@@ -40,6 +43,13 @@ def parseSettings():
             movie_locations.append(tmpConfig.get(constants.__CONFIG_MOVIES, option))
     except:
         logger.warn('parseSettings', 'no movie locations provided.')
+        pass
+
+    try:
+        for option in tmpConfig.options(constants.__CONFIG_NOTIFYMYANDROID_KEYS):
+            notifymyandroid_keys.append(tmpConfig.get(constants.__CONFIG_NOTIFYMYANDROID_KEYS, option))
+    except:
+        logger.warn('parseSettings', 'no Notify My Android keys.')
         pass
 
     return
@@ -79,8 +89,27 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
     #settings parse complete
 
     #build/update database
-    if checkTv: db.buildDatabase(tv_locations, constants.__TYPE_TV)
-    if checkMovie: db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
+    movies = []
+    shows = []
+
+    if checkTv:
+        shows = db.buildDatabase(tv_locations, constants.__TYPE_TV)
+    if checkMovie:
+        movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
+
+    #send push notifications
+    if False and notifymyandroid_keys is not None and len(notifymyandroid_keys) > 0:
+        client = nma.Client(notifymyandroid_keys)
+        if movies is not None and len(movies) > 0:
+            client.notify('MediaPCH',
+                          'Movies Added',
+                          "<br>".join(movies),
+                          kwargs={'content-type': 'text/html'})
+        if shows is not None and len(shows) > 0:
+            client.notify('MediaPCH',
+                          'Shows Added',
+                          "<br>".join(shows),
+                          kwargs={'content-type': 'text/html'})
 
     logger.info('main', 'Finished indexing')
 

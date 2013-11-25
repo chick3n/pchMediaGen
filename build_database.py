@@ -25,23 +25,23 @@ def buildDatabase(locations, type):
     global conn, cur
 
     if len(locations) <= 0:
-        return
+        return None
 
     initalizeDB()
 
     if conn is None or cur is None:
         logger.error('buildDatabase', 'build_database.py', 'Connection to database not established. Exiting.')
-        return
+        return None
 
     populateDB(locations, type)
-    ud.updateDB(conn, cur, type)
+    added = ud.updateDB(conn, cur, type)
 
     #clean up
     if(conn is not None):
         conn.commit()
         conn.close()
 
-    return
+    return added
 
 
 def initalizeDB():
@@ -119,9 +119,9 @@ def populateDBMovie(locations, type):
                                            , dirname
                                            , folder
                                            , added
-                            ))
+                        ))
             except Exception, e:
-                logger.error(str(e))
+                logger.error('populateDBMovie', 'build_database.py', str(e))
                 continue;
         if len(insertList) > 0:
             logger.info('Movies', "Indexed Movies:\n%s", ','.join([x[2] for x in insertList]))

@@ -56,10 +56,10 @@
                 </div>
                 <div class="pc title">
                     <span class="groupTitle">
-                        % if data['type'] == 'tv':
-                            <span class="extra">${data['extra']}</span>
-                        % endif
                         <a href="Javascript:ExpandMedia('${data['type']}',${data['id']});" class="title">${data['title']}</a>
+                        % if data['type'] == 'tv':
+                            <span class="extra"><sup>${data['extra']}</sup></span>
+                        % endif
                     </span>
                 </div>
             </div>
