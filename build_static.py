@@ -59,7 +59,7 @@ def validateLocation(loc):
 
 def bootstrap():
     #filemode='w' #new file every launch
-    logging.basicConfig(level=logging.DEBUG
+    logging.basicConfig(filename='status.log', level=logging.DEBUG
         , format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 
