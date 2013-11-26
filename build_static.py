@@ -98,7 +98,7 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
         movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
 
     #send push notifications
-    if False and notifymyandroid_keys is not None and len(notifymyandroid_keys) > 0:
+    if notifymyandroid_keys is not None and len(notifymyandroid_keys) > 0:
         client = nma.Client(notifymyandroid_keys)
         if movies is not None and len(movies) > 0:
             client.notify('MediaPCH',
