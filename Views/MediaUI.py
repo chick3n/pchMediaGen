@@ -34,7 +34,7 @@ class MediaUI(object):
             , format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
     @cherrypy.expose
-    def index(self, page=0, sort='date', dir='desc', filter='all', search=''):
+    def index(self, page=0, sort='date', dir='desc', filter='all', search=None):
 
         try:
             current_page = int(page)
@@ -47,20 +47,34 @@ class MediaUI(object):
                                                            'desc' if str(dir) == 'desc' else 'asc',
                                                            str(filter))
 
+        #filters movie or tv or all
+        movie_checked = ''
+
+        if search is not None and search.__len__() > 0:
+            next_page += "&search=" + search
+        else:
+            search = None
+
         if filter == 'movies':
-            media_content = self.content.get_all_movie_content(page=current_page, order=sort, direction=dir, limit=50)
+            media_content = self.content.get_all_movie_content(page=current_page, order=sort, direction=dir, limit=50,
+                                                               search=search)
+            movie_checked = "checked='checked'"
         elif filter == 'tv':
             return self.tv(None, None, page, sort, dir, search)
         else:
-            media_content = self.content.get_all_media_content(page=current_page, order=sort, direction=dir, limit=50)
+            media_content = self.content.get_all_media_content(page=current_page, order=sort, direction=dir, limit=50,
+                                                               search=search)
 
         tmpl = lookup.get_template("index.html")
         return tmpl.render(media=media_content,
-                           nextPage=next_page)
+                           nextPage=next_page,
+                           searchContent=search,
+                           movie_checked=movie_checked,
+                           tv_checked='')
 
     @cherrypy.expose
     def movies(self, page=0, sort='date', dir='desc', search=''):
-        return self.index(page, sort, dir, 'movies')
+        return self.index(page, sort, dir, 'movies', search)
 
     @cherrypy.expose
     def tv(self, show=None, season=None, page=0, sort='date', dir='asc', search=''):
@@ -82,21 +96,26 @@ class MediaUI(object):
         tmpl = lookup.get_template("index.html")
         if current_show is not None and current_season is not None:
             # list of episodes for show
-            media_content = self.content.get_episodes(current_show, current_season, page=current_page, direction=dir)
+            media_content = self.content.get_episodes(current_show, current_season, page=current_page, direction=dir,
+                                                      search=search)
             #nextPage
             next_page = "/tv?show=%s&season=%s&page=%s&sort=%s&dir=%s" % (str(current_show), str(current_season),
                                                                           str(current_page + 1),
                                                                           'date' if str(sort) == 'date' else 'title',
                                                                           'desc' if str(dir) == 'desc' else 'asc')
         else:
-            media_content = self.content.get_all_tv_content(page=current_page, direction=dir)
+            media_content = self.content.get_all_tv_content(page=current_page, direction=dir, search=search)
 
             #nextPage
             next_page = "/tv?page=%s&sort=%s&dir=%s" % (str(current_page + 1),
                                                         'date' if str(sort) == 'date' else 'title',
                                                         'desc' if str(dir) == 'desc' else 'asc')
 
-        return tmpl.render(media=media_content, nextPage=next_page)
+        if search is not None and search.__len__() > 0:
+            next_page += "&search=" + search
+
+        return tmpl.render(media=media_content, nextPage=next_page, searchContent=search,
+                           movie_checked='', tv_checked="checked='checked'")
 
     @cherrypy.expose
     def media(self, type, id):
@@ -158,7 +177,8 @@ def stopService(kill=False, restart=False):
     cherrypy.engine.stop()
 
     if kill:
-        killService(); root.stop()
+        killService();
+        root.stop()
     elif restart:
         startService(redirect=True)
 

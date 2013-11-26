@@ -516,22 +516,31 @@ class Content(object):
 
         return html
 
-    def get_all_media_content(self, page=0, limit=50, order='date', direction='desc'):
+    def get_all_media_content(self, page=0, limit=50, order='date', direction='desc', search=None):
+        tv_sql = """select
+                       episode.id, episode.title, episode.added,
+                       show.title as extraTitle,
+                       'tv' as type,
+                       episode.file_name
+                    from episode
+                    inner join show on show.id = episode.show
+                    """
+
+        movie_sql = """select
+                           movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type, movie.file_name
+                        from movie"""
+
+        if search is not None:
+            tv_sql += " where episode.title like '%" + search + "%' or show.title like '%" + search + "%'"
+            movie_sql += " where movie.title like '%" + search + "%'"
+
         sql = """select * from
-                (select
-                   episode.id, episode.title, episode.added,
-                   show.title as extraTitle,
-                   'tv' as type,
-                   episode.file_name
-                from episode
-                inner join show on show.id = episode.show
-
+                (%s
                 union all
-
-                select
-                   movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type, movie.file_name
-                from movie)
-                order by %s %s limit ?, ? """ % ('added' if order == 'date' else 'title',
+                %s)
+                order by %s %s limit ?, ? """ % (tv_sql,
+                                                 movie_sql,
+                                                 'added' if order == 'date' else 'title',
                                                  'desc' if direction == 'desc' else 'asc')
 
         mediaContent = self.sql.select(sql, (page * limit, limit,))
@@ -551,10 +560,12 @@ class Content(object):
         return results
 
     #returns only the shows
-    def get_all_tv_content(self, page=0, limit=50, direction='desc'):
+    def get_all_tv_content(self, page=0, limit=50, direction='desc', search=None):
         sql = """select show.id, show.title, 'show' as type
                 from show
-                order by show.title %s limit ?, ? """ % ('desc' if direction == 'desc' else 'asc',)
+                %s
+                order by show.title %s limit ?, ? """ % (search if not None else '',
+                                                         'desc' if direction == 'desc' else 'asc',)
 
         mediaContent = self.sql.select(sql, (page * limit, limit,))
 
@@ -628,7 +639,12 @@ class Content(object):
         return results
 
     #return just the episodes related to the season and show id
-    def get_episodes(self, show=0, season=0, page=0, limit=50, direction='desc'):
+    def get_episodes(self, show=0, season=0, page=0, limit=50, direction='desc', search=None):
+
+        search_content = ''
+        if search is not None and search.__len__() > 0:
+            search_content = "AND episode.title like '%" + search + "%'"
+
         sql = """select
                    episode.id, episode.title, episode.added,
                    show.title as extraTitle,
@@ -636,9 +652,9 @@ class Content(object):
                    episode.file_name
                 from episode
                 inner join show on show.id = episode.show
-                where episode.season = ? AND show.id = ?
+                where episode.season = ? AND show.id = ? %s
                 order by episode.episode %s
-                limit ?, ?""" % (direction,)
+                limit ?, ?""" % (search_content, direction,)
 
         mediaContent = self.sql.select(sql, (season, show, page * limit, limit,))
 
@@ -656,13 +672,17 @@ class Content(object):
 
         return results
 
-    def get_all_movie_content(self, page=0, limit=50, order='date', direction='desc'):
+    def get_all_movie_content(self, page=0, limit=50, order='date', direction='desc', search=None):
         sql = """select
                    movie.id, movie.title, movie.added, '' as extraTitle, 'movie' as type,
                    movie.file_name
-                from movie
-                order by %s %s limit ?, ? """ % ('added' if order == 'date' else 'title',
-                                                 'desc' if direction == 'desc' else 'asc')
+                from movie """
+
+        if search is not None and search.__len__() > 0:
+            sql += "where movie.title like '%" + search + "%' "
+
+        sql += "order by %s %s limit ?, ? " % ('added' if order == 'date' else 'title',
+                                               'desc' if direction == 'desc' else 'asc')
 
         mediaContent = self.sql.select(sql, (page * limit, limit,))
 
@@ -702,9 +722,9 @@ class Content(object):
             content["filename"] = movie[10]
             content["imdb"] = movie[11]
 
-            if content["fanart"] is not None:
-                if not os.path.exists(content["fanart"]):
-                    content["fanart"] = None
+            #if content["fanart"] is not None:
+            #    if not os.path.exists(content["fanart"]):
+            #        content["fanart"] = None
 
             if content["desc"].__len__() > 300:
                 content["desc"] = content["desc"][:300] + "..."
@@ -753,9 +773,9 @@ class Content(object):
 
             content["episode"] = show_episode
 
-            if content["fanart"] is not None:
-                if not os.path.exists(content["fanart"]):
-                    content["fanart"] = None
+            #if content["fanart"] is not None:
+             #   if not os.path.exists(content["fanart"]):
+              #      content["fanart"] = None
 
             if content["desc"].__len__() > 300:
                 content["desc"] = content["desc"][:300] + "..."

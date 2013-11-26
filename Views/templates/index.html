@@ -11,6 +11,30 @@
 <body>
 
 <script type="text/javascript">
+    $(document).ready(function() {
+        $("#search").keypress(function(e) {
+            if(e.which == 13) {
+                RunSearch();
+            }
+        });
+
+        $("#movies_check").change(function() {
+            if(this.checked)
+                window.location = '/movies';
+            else window.location = '/';
+        });
+
+        $("#shows_check").change(function() {
+            if(this.checked)
+                window.location = '/tv';
+            else window.location = '/';
+        });
+    });
+
+    function RunSearch() {
+        window.location = '?search=' + $("#search").val();
+    }
+
     function ExpandMedia(type, mediaId)
     {
         mediaType = 'movie';
@@ -22,10 +46,10 @@
             case 'show': mediaType = 'show'; break;
         }
 
-        if($("#" + mediaId).css("display") == "block")
+        if($("#" + type + mediaId).css("display") == "block")
         {
-            $("#" + mediaId).css("display", "none");
-            $("#" + mediaId).html("");
+            $("#" + type + mediaId).css("display", "none");
+            $("#" + type + mediaId).html("");
             return;
         }
 
@@ -34,12 +58,22 @@
             type: 'GET',
             contentType: 'application/json',
             success: function (data){
-                $("#" + mediaId).append(data);
-                $("#" + mediaId).css("display", "block");
+                $("#" + type + mediaId).append(data);
+                $("#" + type + mediaId).css("display", "block");
             }
          });
     }
 </script>
+
+<div style="width:100%;">
+    <div style="float:left;">
+        <input type="text" id="search" value="${'' if searchContent is None else searchContent}" /> <a href="Javascript:RunSearch();">Find...</a>
+    </div>
+    <div style="float:right;">
+        <input type="checkbox" id="movies_check" ${movie_checked} /><label for="movies_check">movies</label>
+        <input type="checkbox" id="shows_check" ${tv_checked} /><label for="shows_check">tv</label>
+    </div>
+</div>
 
 <div class="contentBody">
     <div style="clear:both;">
@@ -51,7 +85,7 @@
                 % endif
                 <div class="pc type">
                     <span class="c-5 c-7">
-                        <a href="#" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a><a href="#" class="c-child">SD</a>
+                        <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a><a href="Javascript:none;" class="c-child">SD</a>
                     </span>
                 </div>
                 <div class="pc title">
@@ -63,7 +97,7 @@
                     </span>
                 </div>
             </div>
-            <div class="mediaDetails" id="${data['id']}" style="overflow: hidden;">
+            <div class="mediaDetails" id="${data['type']}${data['id']}" style="overflow: hidden;">
 
             </div>
         </div>
