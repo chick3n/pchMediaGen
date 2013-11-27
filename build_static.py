@@ -18,19 +18,19 @@ import logging
 from logger import logger
 from pushnotify import exceptions
 from pushnotify import nma
+import globals
 
 # globals
 movie_locations = []
 tv_locations = []
 notifymyandroid_keys = []
-local_script_path = ''
 
 # load settings
 def parseSettings():
     global movie_locations, tv_locations
 
     tmpConfig = ConfigParser.ConfigParser()
-    tmpConfig.read(local_script_path + constants.__CONFIG_FILENAME)
+    tmpConfig.read(globals.local_script_path + constants.__CONFIG_FILENAME)
 
     try:
         for option in tmpConfig.options(constants.__CONFIG_TV):
@@ -60,7 +60,7 @@ def validateLocation(loc):
 
 def bootstrap():
     #filemode='w' #new file every launch
-    logging.basicConfig(filename=local_script_path + 'status.log',
+    logging.basicConfig(filename=globals.local_script_path + 'status.log',
                         level=logging.DEBUG,
                         format='%(asctime)s %(message)s',
                         datefmt='%m/%d/%Y %I:%M:%S %p',
@@ -97,9 +97,9 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
     shows = []
 
     if checkTv:
-        shows = db.buildDatabase(tv_locations, constants.__TYPE_TV, local_script_path)
+        shows = db.buildDatabase(tv_locations, constants.__TYPE_TV, globals.local_script_path)
     if checkMovie:
-        movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE, local_script_path)
+        movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE, globals.local_script_path)
 
     #send push notifications
     if notifymyandroid_keys is not None and len(notifymyandroid_keys) > 0:
@@ -122,7 +122,8 @@ if __name__ == '__main__':
     params = {"tv": False, "movie": False, "tvFanart": False, "movieFanart": False}
     helpMode = False
 
-    local_script_path = os.path.normpath(os.path.dirname(sys.argv[0])) + os.sep
+    globals.init()
+    globals.local_script_path = os.path.normpath(os.path.dirname(sys.argv[0])) + os.sep
 
     if len(sys.argv) > 1:
         for argv in sys.argv[1:]:

@@ -11,6 +11,7 @@ from PIL import Image
 import tmdb
 import difflib
 from logger import logger
+import globals
 
 def updateDB(conn, cur, type):
     if conn is None:
@@ -49,11 +50,11 @@ def updateFanartMovie(cur, conn): #posters only for now
     for movie in movies:
         #check if already exists due to crashing and no DB commits happening during this whole process. Not a good idea.
         #fix later
-        if os.path.isfile('Views/images/movie/' + movie[1] + '_poster.jpg'):
+        if os.path.isfile(globals.local_script_path + 'Views/images/movie/' + movie[1] + '_poster.jpg'):
             cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (movie[1] + '_poster.jpg', movie[0],))
             conn.commit()
             continue
-        elif os.path.isfile('Views/images/movie/' + movie[1] + '_poster.png'):
+        elif os.path.isfile(globals.local_script_path + 'Views/images/movie/' + movie[1] + '_poster.png'):
             cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (movie[1] + '_poster.png', movie[0],))
             conn.commit()
             continue
@@ -84,27 +85,38 @@ def updateFanartMovie(cur, conn): #posters only for now
         url = poster
         ext = os.path.splitext(url)[1]
         poster_file_name = movie[1] + '_poster' + ext
-        urllib.urlretrieve(url, 'Views/images/movie/' + poster_file_name)
+
         try:
-            img = Image.open('Views/images/movie/' + poster_file_name)
-            img = img.resize((228,342), PIL.Image.ANTIALIAS)
-            img.save('Views/images/movie/' + poster_file_name)
-        except:
-            if os.path.isfile('VIews/images/movie/' + poster_file_name):
-                os.remove('Views/images/movie' + poster_file_name) # remove file if partially created.
-            logger.error('updateFanartMovie', 'update_database.py', 'PIL crashed on image resize for poster \"%s\" [%s]', movie[2], movie[0])
+            urllib.urlretrieve(url, globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        except Exception, e:
+            logger.error('updateFanartMovie', 'update_database.py', str(e))
             continue
-        cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (poster_file_name, movie[0],))
+
+        # no need to resize any more since not running on PCH but through phone/tablet browser
+        #try:
+        #    img = Image.open(globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        #    img = img.resize((228, 342), PIL.Image.ANTIALIAS)
+        #    img.save(globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        #except Exception, e:
+        #    if os.path.isfile(globals.local_script_path + 'VIews/images/movie/' + poster_file_name):
+        #        os.remove(globals.local_script_path + 'Views/images/movie' + poster_file_name)
+        #        # remove file if partially created.
+        #    logger.error('updateFanartMovie', 'update_database.py',
+        #                 'PIL crashed on image resize for poster \"%s\" [%s]',
+        #                 movie[2], movie[0])
+        #    logger.error('updateFanartMovie', 'update_database.py', str(e))
+
+        cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?",
+                    (poster_file_name, movie[0],))
         conn.commit()
         logger.info('FANART', 'TMDB returned poster %s which has been added for \"%s\"', poster_file_name, movie[2])
-
 
 
 def updateFanartTV(cur):
     cur.execute("select title, fanart, id from show where fanart is null and updated is null")
     shows = cur.fetchall()
 
-    tvdb = tvdb_api.Tvdb(banners = True)
+    tvdb = tvdb_api.Tvdb(banners=True)
 
     for show in shows:
         banners = None
@@ -143,22 +155,27 @@ def updateFanartTV(cur):
             if float(art[1]['rating']) > fanart_rating:
                 fanart = art[1]
 
-        if fanart != None: #download fanart
+        #download fanart
+        if fanart is not None:
             url = fanart['_bannerpath']
             ext = os.path.splitext(url)[1]
             fanart_file_name = str(show[2]) + '_fanart' + ext
             #f.open(show[0].lower().replace(' ', '') + '_fanart')
             #f.write(urllib.urlopen(url).read())
             #f.close()
-            urllib.urlretrieve(url, 'Views/images/tv/' + fanart_file_name)
-            img = Image.open('Views/images/tv/' + fanart_file_name)
-            img = img.resize((608,340), PIL.Image.ANTIALIAS)
-            img.save('Views/images/tv/' + fanart_file_name)
+
+            urllib.urlretrieve(url, globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
+
+            # no need to resize any more since not running on PCH but through phone/tablet browser
+            #img = Image.open(globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
+            #img = img.resize((608,340), PIL.Image.ANTIALIAS)
+            #img.save(globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
             cur.execute("UPDATE show SET fanart = ? WHERE id = ?", (fanart_file_name, show[2],))
             logger.info('FANART', 'TVDB returned fanart %s which has been added for \"%s\"', fanart_file_name, show[0])
         else:
             cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             logger.info('FANART', 'TVDB returned no fanart for \"%s\"', show[0])
+
 
 def beginMovieParse(cur):
     updateList = []
