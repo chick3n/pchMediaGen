@@ -23,13 +23,14 @@ from pushnotify import nma
 movie_locations = []
 tv_locations = []
 notifymyandroid_keys = []
+local_script_path = ''
 
 # load settings
 def parseSettings():
     global movie_locations, tv_locations
 
     tmpConfig = ConfigParser.ConfigParser()
-    tmpConfig.read(constants.__CONFIG_FILENAME)
+    tmpConfig.read(local_script_path + constants.__CONFIG_FILENAME)
 
     try:
         for option in tmpConfig.options(constants.__CONFIG_TV):
@@ -59,8 +60,11 @@ def validateLocation(loc):
 
 def bootstrap():
     #filemode='w' #new file every launch
-    logging.basicConfig(filename='status.log', level=logging.DEBUG
-        , format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    logging.basicConfig(filename=local_script_path + 'status.log',
+                        level=logging.DEBUG,
+                        format='%(asctime)s %(message)s',
+                        datefmt='%m/%d/%Y %I:%M:%S %p',
+                        filemode='w')
 
 
 def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=False):
@@ -93,9 +97,9 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
     shows = []
 
     if checkTv:
-        shows = db.buildDatabase(tv_locations, constants.__TYPE_TV)
+        shows = db.buildDatabase(tv_locations, constants.__TYPE_TV, local_script_path)
     if checkMovie:
-        movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
+        movies = db.buildDatabase(movie_locations, constants.__TYPE_MOVIE, local_script_path)
 
     #send push notifications
     if notifymyandroid_keys is not None and len(notifymyandroid_keys) > 0:
@@ -117,6 +121,8 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
 if __name__ == '__main__':
     params = {"tv": False, "movie": False, "tvFanart": False, "movieFanart": False}
     helpMode = False
+
+    local_script_path = os.path.normpath(os.path.dirname(sys.argv[0])) + os.sep
 
     if len(sys.argv) > 1:
         for argv in sys.argv[1:]:

@@ -65,16 +65,16 @@
     }
 </script>
 
-<div style="width:100%;">
+<div style="width:100%; font-size: 23px; padding-bottom: 20px">
     <div style="float:left;">
-        <input type="text" id="search" value="${'' if searchContent is None else searchContent}" /> <a href="Javascript:RunSearch();">Find...</a>
+        <input type="text" id="search" value="${'' if searchContent is None else searchContent}" style="height: 30px; font-size:22px" /> <a href="Javascript:RunSearch();">Find...</a>
     </div>
     <div style="float:right;">
         <input type="checkbox" id="movies_check" ${movie_checked} /><label for="movies_check">movies</label>
         <input type="checkbox" id="shows_check" ${tv_checked} /><label for="shows_check">tv</label>
     </div>
 </div>
-
+<br/>
 <div class="contentBody">
     <div style="clear:both;">
     % for data in media:
@@ -85,7 +85,7 @@
                 % endif
                 <div class="pc type">
                     <span class="c-5 c-7">
-                        <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a><a href="Javascript:none;" class="c-child">SD</a>
+                        <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a>
                     </span>
                 </div>
                 <div class="pc title">

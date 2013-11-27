@@ -27,8 +27,8 @@ div.pagination {
 }
 
 div.date {
-    font-size: 12px;
-    width: 41px;
+    font-size: 32px;
+    width: 80px;
     text-align: left;
     color: #666;
 }
@@ -39,11 +39,11 @@ div.type {
     padding-left: 0!important;
     text-align: right;
     font-weight: 400!important;
-    font-size: 11px;
+    font-size: 31px;
 }
 
 div.type {
-    font-size: 11px;
+    font-size: 31px;
 }
 
 div.title {
@@ -51,7 +51,7 @@ div.title {
     padding-left: 0!important;
     text-align: left;
     font-weight: 400!important;
-    font-size: 16px;
+    font-size: 36px;
     color: #2E3944;
     border-left: 1px dotted #e1e1e1;
 }
@@ -97,7 +97,7 @@ a {
 }
 
 .c-tv, .c-movie, .c-anime {
-    border-radius: 0 0 0 8px;
+    border-radius: 0 8px 0 8px;
 }
 
 .c-child {
@@ -107,6 +107,8 @@ a {
 .c-child, .c-tv, .c-movie, .c-anime {
     display: inline-block;
     padding: 3px 8px;
+    text-align: center;
+    min-width: 80px;
 }
 
 a {
@@ -213,7 +215,7 @@ color: #4a4a4a;
 }
 
 .mediaDetails {
-font-size: 13px;
+font-size: 33px;
 padding: 0;
 }
 

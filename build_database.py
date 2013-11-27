@@ -21,13 +21,14 @@ from logger import logger
 conn = None
 cur = None
 
-def buildDatabase(locations, type):
+
+def buildDatabase(locations, type, path=''):
     global conn, cur
 
     if len(locations) <= 0:
         return None
 
-    initalizeDB()
+    initalizeDB(path)
 
     if conn is None or cur is None:
         logger.error('buildDatabase', 'build_database.py', 'Connection to database not established. Exiting.')
@@ -37,33 +38,34 @@ def buildDatabase(locations, type):
     added = ud.updateDB(conn, cur, type)
 
     #clean up
-    if(conn is not None):
+    if (conn is not None):
         conn.commit()
         conn.close()
 
     return added
 
 
-def initalizeDB():
+def initalizeDB(path=''):
     global conn
     global cur
 
-    if(not os.path.isfile(constants.__DATABASE_FILENAME)):
-        conn = lite.connect(constants.__DATABASE_FILENAME)
+    if not os.path.isfile(path + constants.__DATABASE_FILENAME):
+        conn = lite.connect(path + constants.__DATABASE_FILENAME)
         cur = conn.cursor()
         cur.executescript(constants.__DATABASE_CREATE())
         conn.commit()
     else:
-        conn = lite.connect(constants.__DATABASE_FILENAME)
+        conn = lite.connect(path + constants.__DATABASE_FILENAME)
         cur = conn.cursor()
 
     return
 
+
 def populateDB(locations, type):
-    if(type == constants.__TYPE_TV):
+    if type == constants.__TYPE_TV:
         populateDBTV(locations, type)
 
-    if(type == constants.__TYPE_MOVIE):
+    if type == constants.__TYPE_MOVIE:
         populateDBMovie(locations, type)
 
     return
@@ -185,11 +187,12 @@ def populateDBTV(locations, type):
                                        , dirname
                                        , folder
                                        , added
-                                    ))
+                    ))
 
             if len(insertList) > 0:
                 logger.info('TV', 'Indexing \"%s\" - Found %s releases', dirname, len(insertList))
-                cur.executemany('insert into episode (full_path, file_name, parent_dir, sub_dir, added) VALUES (?,?,?,?, ?)'
+                cur.executemany(
+                    'insert into episode (full_path, file_name, parent_dir, sub_dir, added) VALUES (?,?,?,?, ?)'
                     , insertList)
                 conn.commit()
             elif skippedDir:

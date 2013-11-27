@@ -113,6 +113,8 @@ def updateFanartTV(cur):
             banners = tvdb[show[0]]['_banners']
         except:
             logger.warn('updateFanartTv', 'TVDB returned no result for \"%s\"', show[0])
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             continue
 
         if 'fanart' not in banners.keys():
@@ -126,6 +128,8 @@ def updateFanartTV(cur):
         elif '1280x720' in banners['fanart']: key = '1280x720'
         else:
             logger.warn('updateFanartTv', 'TVDB returned no fanart results for accepted sizes {%s}', '1920x1080, 1280x720')
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             continue #change this to just choose next best
 
         fanart = None
@@ -153,6 +157,7 @@ def updateFanartTV(cur):
             cur.execute("UPDATE show SET fanart = ? WHERE id = ?", (fanart_file_name, show[2],))
             logger.info('FANART', 'TVDB returned fanart %s which has been added for \"%s\"', fanart_file_name, show[0])
         else:
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             logger.info('FANART', 'TVDB returned no fanart for \"%s\"', show[0])
 
 def beginMovieParse(cur):
@@ -258,15 +263,20 @@ def beginMovieParse(cur):
                         , parentdir
                         , searchTitle
                         , ','.join([x.get_title() for x in movies]))
+                    #update the database so we dont see this again for the same movie each iteration
+                    cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
 
                     returnList.append(parentdir)
             else:
                 logger.warn('MEDIA_INFO', 'TMDB returned a null object for \"%s\". RAW = %s', searchTitle, parentdir)
+                #update the database so we dont see this again for the same movie each iteration
+                cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
                 returnList.append(parentdir)
         else:
             logger.error('beginMovieParse', 'update_database.py', 'We were unable to parse a title out of \"%s\"', parentdir)
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
             returnList.append(parentdir)
-
 
         if len(updateList) > 40:
             cur.executemany("update movie set title = ?, year = ?, airdate = ?, tmdbid = ?, imdbid = ?, description = ?, runtime = ?, updated = date('now') WHERE id = ?", updateList)

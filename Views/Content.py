@@ -46,9 +46,9 @@ class Content(object):
 
         delta = datetime.today() - added
         if delta.days > 365:
-            return "%s year" % int(floor(delta.days / 365))
+            return "%s yr" % int(floor(delta.days / 365))
         elif delta.days > 30:
-            return "%s month" % int(floor(delta.days / 30))
+            return "%s mth" % int(floor(delta.days / 30))
 
         return "%s day" % delta.days
 
@@ -67,9 +67,9 @@ class Content(object):
 
         delta = datetime.now() - watched
         if delta.days > 365:
-            return "%s year" % int(floor(delta.days / 365))
+            return "%s yr" % int(floor(delta.days / 365))
         elif delta.days > 30:
-            return "%s month" % int(floor(delta.days / 30))
+            return "%s mth" % int(floor(delta.days / 30))
 
         return "%s day" % delta.days
 
