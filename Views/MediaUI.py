@@ -7,6 +7,7 @@ import logging
 import datetime
 from logger import logger
 import json
+from subprocess import call
 
 #web
 import Tv
@@ -150,6 +151,27 @@ class MediaUI(object):
             data['status'] = 1
 
         return tmpl.render(media=data)
+
+    @cherrypy.expose
+    def runjob(self):
+        data = {'status': 0, 'message': ''}
+
+        try:
+            #check if job is running already
+            if os.system('ps -ef | grep build_static.py | grep -v grep') == 0:
+                data['status'] = 1
+                data['message'] = 'Job is currently running.'
+                return data
+
+            #job is not running
+            call('/home/chicken/.mediaPCH/build_static.py -mtMT')
+            data['status'] = 1
+            data['message'] = 'Job has been started.'
+        except Exception, e:
+            data['message'] = str(e)
+            logger.error('runjob', 'MediaUI.py', str(e))
+
+        return data
 
     def stop(self):
         self.content.close()

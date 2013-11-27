@@ -35,6 +35,17 @@
         window.location = '?search=' + $("#search").val();
     }
 
+    function RunJob() {
+        jQuery.ajax({
+            url: '/runjob',
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (data){
+                alert(data);
+            }
+         });
+    }
+
     function ExpandMedia(type, mediaId)
     {
         mediaType = 'movie';
@@ -68,6 +79,7 @@
 <div style="width:100%; font-size: 23px; padding-bottom: 20px">
     <div style="float:left;">
         <input type="text" id="search" value="${'' if searchContent is None else searchContent}" style="height: 30px; font-size:22px" /> <a href="Javascript:RunSearch();">Find...</a>
+        <a href="Javascript:RunJob();" style="padding-left:20px;">Start Parse</a>
     </div>
     <div style="float:right;">
         <input type="checkbox" id="movies_check" ${movie_checked} /><label for="movies_check">movies</label>
@@ -77,31 +89,39 @@
 <br/>
 <div class="contentBody">
     <div style="clear:both;">
-    % for data in media:
-        <div class="mediaBody">
-            <div class="media">
-                % if data['dayssince'] is not None:
-                    <div class="pc date">${data['dayssince']}</div>
-                % endif
-                <div class="pc type">
-                    <span class="c-5 c-7">
-                        <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a>
-                    </span>
-                </div>
-                <div class="pc title">
-                    <span class="groupTitle">
-                        <a href="Javascript:ExpandMedia('${data['type']}',${data['id']});" class="title">${data['title']}</a>
-                        % if data['type'] == 'tv':
-                            <span class="extra"><sup>${data['extra']}</sup></span>
+        <table>
+            % for data in media:
+                <tr>
+                    <td class="date">
+                        % if data['dayssince'] is not None:
+                            <div class="pc date">${data['dayssince']}</div>
                         % endif
-                    </span>
-                </div>
-            </div>
-            <div class="mediaDetails" id="${data['type']}${data['id']}" style="overflow: hidden;">
+                    </td>
 
-            </div>
-        </div>
-    % endfor
+                    <td class="subsection">
+                        <span class="c-5 c-7">
+                            <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a>
+                        </span>
+                    </td>
+
+                    <td class="title">
+                        <span class="groupTitle">
+                            <a href="Javascript:ExpandMedia('${data['type']}',${data['id']});" class="title">${data['title']}</a>
+                            % if data['type'] == 'tv':
+                                <span class="extra"><sup>${data['extra']}</sup></span>
+                            % endif
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="mediaDetails" id="${data['type']}${data['id']}" style="overflow: hidden;">
+
+                        </div>
+                    </td>
+                </tr>
+            % endfor
+        </table>
     </div>
 
     <div class="pagination">

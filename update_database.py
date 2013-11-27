@@ -418,10 +418,13 @@ def beginTVParse(cur):
         updateList.append((data['show'], data['eps'], data['season'], data['title'], data['desc']
                           , data['aired'], data['year'], data['updated'], data['id']))
 
+        if data['title'] is None:
+            data['title'] = filename
+
         return_list.append("{0} {1}x{2} - {3}".format(parentdir.title(),
                                                       data['season'],
                                                       data['eps'],
-                                                      data['title'].encode('utf-8') if not None else filename))
+                                                      data['title'].encode('utf-8')))
 
         #update db
         if len(updateList) >= updateCount:
