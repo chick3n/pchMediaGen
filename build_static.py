@@ -31,15 +31,15 @@ def parseSettings():
     try:
         for option in tmpConfig.options(constants.__CONFIG_TV):
             tv_locations.append(tmpConfig.get(constants.__CONFIG_TV, option))
-    except:
-        logger.warn('parseSettings', 'no tv locations provided.')
+    except Exception, e:
+        logger.warn('parseSettings', 'no tv locations provided. ' + str(e))
         pass
 
     try:
         for option in tmpConfig.options(constants.__CONFIG_MOVIES):
             movie_locations.append(tmpConfig.get(constants.__CONFIG_MOVIES, option))
-    except:
-        logger.warn('parseSettings', 'no movie locations provided.')
+    except Exception, e:
+        logger.warn('parseSettings', 'no movie locations provided. ' + str(e))
         pass
 
     return
@@ -53,7 +53,7 @@ def bootstrap():
         , format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 
-def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=False):
+def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=False, renameAllFiles=False):
     bootstrap()
 
     logger.info('main', 'Starting indexer')
@@ -79,14 +79,21 @@ def main(checkTv=False, checkMovie=False, checkTvFanart=False, checkMovieFanart=
     #settings parse complete
 
     #build/update database
-    if checkTv: db.buildDatabase(tv_locations, constants.__TYPE_TV)
-    if checkMovie: db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
+    if checkTv:
+        db.buildDatabase(tv_locations, constants.__TYPE_TV)
+        renameAllFiles = False
+
+    if checkMovie:
+        db.buildDatabase(movie_locations, constants.__TYPE_MOVIE)
+        renameAllFiles = False
+
+    if renameAllFiles: db.renameAllFiles(tv_locations)
 
     logger.info('main', 'Finished indexing')
 
 
 if __name__ == '__main__':
-    params = {"tv": False, "movie": False, "tvFanart": False, "movieFanart": False}
+    params = {"tv": False, "movie": False, "tvFanart": False, "movieFanart": False, "renameFiles": False}
     helpMode = False
 
     if len(sys.argv) > 1:
@@ -97,6 +104,7 @@ if __name__ == '__main__':
                     elif p == 'm': params["movie"] = True
                     elif p == 'T': params["tvFanart"] = True
                     elif p == 'M': params["movieFanart"] = True
+                    elif p == 'R': params["renameFiles"] = True
             elif argv[0] == '?':
                 helpMode = True
             else:
@@ -108,7 +116,8 @@ if __name__ == '__main__':
         main(params["tv"]
             , params["movie"]
             , params["tvFanart"]
-            , params["movieFanart"])
+            , params["movieFanart"]
+            , params["renameFiles"])
     else:
         print """
                 ex: python build_static.py -tmTM
@@ -116,5 +125,6 @@ if __name__ == '__main__':
                 m = index movies
                 T = scan for fanart for tv
                 M = scan for fanart for Movies
+                R = rename ALL tv files to match title, cannot be used with other options
                 """
 

@@ -11,14 +11,22 @@ from PIL import Image
 import tmdb
 import difflib
 from logger import logger
+import globals
 
 def updateDB(conn, cur, type):
-    if conn is None: return
-    if cur is None: cur = conn.cursor()
+
+    globals.init()
+
+    if conn is None:
+        return None
+    if cur is None:
+        cur = conn.cursor()
+
+    added = []
 
     if type == constants.__TYPE_TV:
         logger.info('MEDIA_INFO', 'TV MEDIA_INFO BEGIN')
-        beginTVParse(cur)
+        added = beginTVParse(cur)
         logger.info('MEDIA_INFO', 'TV MEDIA_INFO END')
 
         logger.info('FANART', 'TV FANART BEGIN')
@@ -26,7 +34,7 @@ def updateDB(conn, cur, type):
         logger.info('FANART', 'TV FANART END')
     elif type == constants.__TYPE_MOVIE:
         logger.info('MEDIA_INFO', 'MOVIE MEDIA_INFO BEGIN')
-        beginMovieParse(cur)
+        added = beginMovieParse(cur)
         logger.info('MEDIA_INFO', 'MOVIE MEDIA_INFO END')
 
         logger.info('FANART', 'MOVIE FANART BEGIN')
@@ -34,7 +42,7 @@ def updateDB(conn, cur, type):
         logger.info('FANART', 'MOVIE FANART END')
 
     conn.commit()
-    return
+    return added
 
 def updateFanartMovie(cur, conn): #posters only for now
     cur.execute("select id, tmdbid, title from movie where poster is null and mediaupdated is null and tmdbid is not null")
@@ -45,11 +53,11 @@ def updateFanartMovie(cur, conn): #posters only for now
     for movie in movies:
         #check if already exists due to crashing and no DB commits happening during this whole process. Not a good idea.
         #fix later
-        if os.path.isfile('Views/images/movie/' + movie[1] + '_poster.jpg'):
+        if os.path.isfile(globals.local_script_path + 'Views/images/movie/' + movie[1] + '_poster.jpg'):
             cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (movie[1] + '_poster.jpg', movie[0],))
             conn.commit()
             continue
-        elif os.path.isfile('Views/images/movie/' + movie[1] + '_poster.png'):
+        elif os.path.isfile(globals.local_script_path + 'Views/images/movie/' + movie[1] + '_poster.png'):
             cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (movie[1] + '_poster.png', movie[0],))
             conn.commit()
             continue
@@ -80,27 +88,38 @@ def updateFanartMovie(cur, conn): #posters only for now
         url = poster
         ext = os.path.splitext(url)[1]
         poster_file_name = movie[1] + '_poster' + ext
-        urllib.urlretrieve(url, 'Views/images/movie/' + poster_file_name)
+
         try:
-            img = Image.open('Views/images/movie/' + poster_file_name)
-            img = img.resize((228,342), PIL.Image.ANTIALIAS)
-            img.save('Views/images/movie/' + poster_file_name)
-        except:
-            if os.path.isfile('VIews/images/movie/' + poster_file_name):
-                os.remove('Views/images/movie' + poster_file_name) # remove file if partially created.
-            logger.error('updateFanartMovie', 'update_database.py', 'PIL crashed on image resize for poster \"%s\" [%s]', movie[2], movie[0])
+            urllib.urlretrieve(url, globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        except Exception, e:
+            logger.error('updateFanartMovie', 'update_database.py', str(e))
             continue
-        cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?", (poster_file_name, movie[0],))
+
+        # no need to resize any more since not running on PCH but through phone/tablet browser
+        #try:
+        #    img = Image.open(globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        #    img = img.resize((228, 342), PIL.Image.ANTIALIAS)
+        #    img.save(globals.local_script_path + 'Views/images/movie/' + poster_file_name)
+        #except Exception, e:
+        #    if os.path.isfile(globals.local_script_path + 'VIews/images/movie/' + poster_file_name):
+        #        os.remove(globals.local_script_path + 'Views/images/movie' + poster_file_name)
+        #        # remove file if partially created.
+        #    logger.error('updateFanartMovie', 'update_database.py',
+        #                 'PIL crashed on image resize for poster \"%s\" [%s]',
+        #                 movie[2], movie[0])
+        #    logger.error('updateFanartMovie', 'update_database.py', str(e))
+
+        cur.execute("UPDATE movie SET poster = ?, mediaupdated = date('now') WHERE id = ?",
+                    (poster_file_name, movie[0],))
         conn.commit()
         logger.info('FANART', 'TMDB returned poster %s which has been added for \"%s\"', poster_file_name, movie[2])
-
 
 
 def updateFanartTV(cur):
     cur.execute("select title, fanart, id from show where fanart is null and updated is null")
     shows = cur.fetchall()
 
-    tvdb = tvdb_api.Tvdb(banners = True)
+    tvdb = tvdb_api.Tvdb(banners=True)
 
     for show in shows:
         banners = None
@@ -109,6 +128,8 @@ def updateFanartTV(cur):
             banners = tvdb[show[0]]['_banners']
         except:
             logger.warn('updateFanartTv', 'TVDB returned no result for \"%s\"', show[0])
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             continue
 
         if 'fanart' not in banners.keys():
@@ -122,6 +143,8 @@ def updateFanartTV(cur):
         elif '1280x720' in banners['fanart']: key = '1280x720'
         else:
             logger.warn('updateFanartTv', 'TVDB returned no fanart results for accepted sizes {%s}', '1920x1080, 1280x720')
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             continue #change this to just choose next best
 
         fanart = None
@@ -135,24 +158,32 @@ def updateFanartTV(cur):
             if float(art[1]['rating']) > fanart_rating:
                 fanart = art[1]
 
-        if fanart != None: #download fanart
+        #download fanart
+        if fanart is not None:
             url = fanart['_bannerpath']
             ext = os.path.splitext(url)[1]
             fanart_file_name = str(show[2]) + '_fanart' + ext
             #f.open(show[0].lower().replace(' ', '') + '_fanart')
             #f.write(urllib.urlopen(url).read())
             #f.close()
-            urllib.urlretrieve(url, 'Views/images/tv/' + fanart_file_name)
-            img = Image.open('Views/images/tv/' + fanart_file_name)
-            img = img.resize((608,340), PIL.Image.ANTIALIAS)
-            img.save('Views/images/tv/' + fanart_file_name)
+
+            urllib.urlretrieve(url, globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
+
+            # no need to resize any more since not running on PCH but through phone/tablet browser
+            #img = Image.open(globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
+            #img = img.resize((608,340), PIL.Image.ANTIALIAS)
+            #img.save(globals.local_script_path + 'Views/images/tv/' + fanart_file_name)
             cur.execute("UPDATE show SET fanart = ? WHERE id = ?", (fanart_file_name, show[2],))
             logger.info('FANART', 'TVDB returned fanart %s which has been added for \"%s\"', fanart_file_name, show[0])
         else:
+            cur.execute("update show set updated = date('now') WHERE id = ?", (show[2],))
             logger.info('FANART', 'TVDB returned no fanart for \"%s\"', show[0])
+
 
 def beginMovieParse(cur):
     updateList = []
+    returnList = []
+
     updateCount = 100
     updated = datetime.datetime.now().strftime("%Y-%m-%d")
     filterWords = r"(.*)proper|sample|repack|extended(\scut)?|dual audio|unrated|rerip|limited|\bdc\b|uncut"
@@ -242,6 +273,8 @@ def beginMovieParse(cur):
                         , data["id"]
                     ))
 
+                    returnList.append(data["title"])
+
                     logger.info('MEDIA_INFO', 'TMDB scrapped data for \"%s\" @ \"%s\".'
                         , data['title']
                         , parentdir)
@@ -250,11 +283,20 @@ def beginMovieParse(cur):
                         , parentdir
                         , searchTitle
                         , ','.join([x.get_title() for x in movies]))
+                    #update the database so we dont see this again for the same movie each iteration
+                    cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
+
+                    returnList.append(parentdir)
             else:
                 logger.warn('MEDIA_INFO', 'TMDB returned a null object for \"%s\". RAW = %s', searchTitle, parentdir)
+                #update the database so we dont see this again for the same movie each iteration
+                cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
+                returnList.append(parentdir)
         else:
             logger.error('beginMovieParse', 'update_database.py', 'We were unable to parse a title out of \"%s\"', parentdir)
-
+            #update the database so we dont see this again for the same movie each iteration
+            cur.execute("update movie set updated = date('now') WHERE id = ?", (data['id'],))
+            returnList.append(parentdir)
 
         if len(updateList) > 40:
             cur.executemany("update movie set title = ?, year = ?, airdate = ?, tmdbid = ?, imdbid = ?, description = ?, runtime = ?, updated = date('now') WHERE id = ?", updateList)
@@ -263,13 +305,11 @@ def beginMovieParse(cur):
     if len(updateList) > 0:
         cur.executemany("update movie set title = ?, year = ?, airdate = ?, tmdbid = ?, imdbid = ?, description = ?, runtime = ?, updated = date('now') WHERE id = ?", updateList)
 
-
-
-
-
+    return returnList
 
 def beginTVParse(cur):
     updateList = []
+    return_list = []
     updateCount = 100
     tvdb = None
     updated = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -313,7 +353,7 @@ def beginTVParse(cur):
 
         if data['season'] is None:
             results = season.match(subdir)
-            if(results is not None):
+            if results is not None:
                 data['season'] = results.group(1)
 
         #TVDB:
@@ -380,6 +420,15 @@ def beginTVParse(cur):
 
         updateList.append((data['show'], data['eps'], data['season'], data['title'], data['desc']
                           , data['aired'], data['year'], data['updated'], data['id']))
+
+        if data['title'] is None:
+            data['title'] = filename
+
+        return_list.append("{0} {1}x{2} - {3}".format(parentdir.title(),
+                                                      data['season'],
+                                                      data['eps'],
+                                                      data['title'].encode('utf-8')))
+
         #update db
         if len(updateList) >= updateCount:
             cur.executemany("UPDATE episode SET show=?,episode=?,season=?,title=?,description=?,airdate=?,year=?,updated=? WHERE id=?", updateList)
@@ -388,4 +437,4 @@ def beginTVParse(cur):
     if len(updateList) > 0: #remaining
         cur.executemany("UPDATE episode SET show=?,episode=?,season=?,title=?,description=?,airdate=?,year=?,updated=? WHERE id=?", updateList)
 
-    return
+    return return_list
