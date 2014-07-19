@@ -1,0 +1,28 @@
+% if media["status"] == 1:
+        % if media["fanart"] is None:
+            <div alt="" class="pb-img placeholder">
+            </div>
+        % else:
+            <img alt="" class="pb-img" src="${media['fanart']}">
+        % endif
+    <div class="post-body-table img-adjacent">
+        <div class="pb-r ">
+            <div class="pb-c  pb-l">Seasons</div>
+            <div class="pb-c  pb-d">
+                % for season in media['seasons']:
+                    <a href="/tv?show=${media['show']}&season=${season}">${season}</a>
+                % endfor
+            </div>
+        </div>
+        <div class="pb-r ">
+            % if media.has_key('last_added_episodes'):
+                <div class="pb-c  pb-l">Added</div>
+                    <div class="pb-c  pb-d">
+                        % for episode in media['last_added_episodes']:
+                            - ${episode['episode']} ${episode['title']} (${episode['added']})<br />
+                        % endfor
+                    </div>
+            % endif
+        </div>
+    </div>
+% endif

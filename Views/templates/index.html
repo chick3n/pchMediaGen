@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.jscroll.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#search").keypress(function(e) {
+            if(e.which == 13) {
+                RunSearch();
+            }
+        });
+
+        $("#movies_check").change(function() {
+            if(this.checked)
+                window.location = '/movies';
+            else window.location = '/';
+        });
+
+        $("#shows_check").change(function() {
+            if(this.checked)
+                window.location = '/tv';
+            else window.location = '/';
+        });
+    });
+
+    function RunSearch() {
+        window.location = '?search=' + $("#search").val();
+    }
+
+    function RunJob() {
+        jQuery.ajax({
+            url: '/runjob',
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (data){
+                alert(data);
+            }
+         });
+    }
+
+    function ExpandMedia(type, mediaId)
+    {
+        mediaType = 'movie';
+
+        switch(type)
+        {
+            case 'tv': mediaType = 'tv'; break;
+            case 'anime': mediaType = 'anime'; break;
+            case 'show': mediaType = 'show'; break;
+        }
+
+        if($("#" + type + mediaId).css("display") == "block")
+        {
+            $("#" + type + mediaId).css("display", "none");
+            $("#" + type + mediaId).html("");
+            return;
+        }
+
+        jQuery.ajax({
+            url: '/media?id=' + mediaId + '&type=' + mediaType,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (data){
+                $("#" + type + mediaId).append(data);
+                $("#" + type + mediaId).css("display", "block");
+            }
+         });
+    }
+</script>
+
+<div style="width:100%; font-size: 23px; padding-bottom: 20px">
+    <div style="float:left;">
+        <input type="text" id="search" value="${'' if searchContent is None else searchContent}" style="height: 30px; font-size:22px" /> <a href="Javascript:RunSearch();">Find...</a>
+        <a href="Javascript:RunJob();" style="padding-left:20px;">Start Parse</a>
+    </div>
+    <div style="float:right;">
+        <input type="checkbox" id="movies_check" ${movie_checked} /><label for="movies_check">movies</label>
+        <input type="checkbox" id="shows_check" ${tv_checked} /><label for="shows_check">tv</label>
+    </div>
+</div>
+<br/>
+<div class="contentBody">
+    <div style="clear:both;">
+        <table>
+            % for data in media:
+                <tr>
+                    <td class="date">
+                        % if data['dayssince'] is not None:
+                            <div class="pc date">${data['dayssince']}</div>
+                        % endif
+                    </td>
+
+                    <td class="subsection">
+                        <span class="c-5 c-7">
+                            <a href="Javascript:none;" class="c-${'tv' if data['type'] == 'show' else data['type']}">${data['type']}</a>
+                        </span>
+                    </td>
+
+                    <td class="title">
+                        <span class="groupTitle">
+                            <a href="Javascript:ExpandMedia('${data['type']}',${data['id']});" class="title">${data['title']}</a>
+                            % if data['type'] == 'tv':
+                                <span class="extra"><sup>${data['extra']}</sup></span>
+                            % endif
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="mediaDetails" id="${data['type']}${data['id']}" style="overflow: hidden;">
+
+                        </div>
+                    </td>
+                </tr>
+            % endfor
+        </table>
+    </div>
+
+    <div class="pagination">
+        <a href="" class="prev">prev</a>
+        <a href="${nextPage}" class="next">next</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.contentBody').jscroll({
+        loadingHtml: '<small>Loading...</small>',
+        padding: 20,
+        nextSelector: 'a.next',
+        contentSelector: 'div.contentBody',
+        pagingSelector: 'div.pagination'
+    });
+</script>
+
+</body>
+</html>
